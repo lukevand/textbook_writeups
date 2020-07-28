@@ -1,0 +1,413 @@
+\documentclass[12pt]{article}
+
+\author{Luke van Duuren}
+\title{Herbert Enderton's\\ Elements of Set Theory}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs} % for \mathscr
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multicol}
+
+\setlength{\parindent}{0pt}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+
+\theoremstyle{remark}
+\newtheorem*{exthm}{Theorem}
+\newtheorem*{eg}{Example}
+
+\theoremstyle{definition}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{defn}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\powerset}{\mathscr{P}\,}
+
+\newcommand{\thmproof}[3]{%
+ \begin{thm}[#1]
+  #2
+ \end{thm}
+ \begin{proof}
+  #3
+ \end{proof}
+}
+
+\providecommand\st{}
+
+\newcommand\SetSymbol[1][]{%
+ \nonscript\:#1\vert%
+ \allowbreak%
+ \nonscript\:
+\mathopen{}}
+
+\DeclarePairedDelimiterX\Set[1]\{\}{%
+ \renewcommand\st{\SetSymbol[\delimsize]}
+ #1
+}
+
+\DeclarePairedDelimiter\aSet\{\}
+\renewcommand{\iff}{\Leftrightarrow}
+
+\begin{document}
+\maketitle
+
+\section{Introduction and Motivation}
+There are my notes to the book. It also contains extra theorems to ``obvious'' facts. I started writing this as I started a job which involves all bug fixing and very sparse amounts of mathematics! And reading baby Rudin was a lot more difficult\ldots
+
+I have started reading Enderton a few times previously, but only get to the Peano axioms and lose momentum, but not this time, God damn it!
+
+\section{Axioms}
+\begin{axiom}[Extensionality Axiom]\label{extensionality}
+ If two sets have exactly the same members, then they are equal:
+ \[
+  \forall A\ \forall B \left(\forall x(x \in A \Leftrightarrow x \in B) \Rightarrow A = B\right).
+ \]
+\end{axiom}
+
+\begin{axiom}[Empty Set Axiom] There is a set having no members:
+ \[
+  \exists B \ \forall x \ x \not\in B.
+ \]
+\end{axiom}
+
+This can be rewritten as
+\[
+ \exists B \ \forall x (x \in B\ \iff\ x \neq x),
+\]
+\begin{axiom}[Pairing Axiom] For any sets $u$ and $v$, there is a set having members of just $u$ and $v$:
+ \[
+  \forall u\ \forall v\ \exists B\ \forall x(x \in B \Leftrightarrow x = u \text{ or } x = v).
+ \]
+\end{axiom}
+
+\begin{axiom}[Power Set Axiom] For any set $a$, there is a set whose members are exactly the subsets of $a$:
+ \[
+  \forall a\ \exists B\ \forall x(x \in B \Leftrightarrow x \subseteq a).
+ \]
+\end{axiom}
+
+\begin{axiom}[Subset Axioms]
+ For each formula $\alpha$ not containing $B$, the following is an axiom:
+ \[
+  \forall t_1\ \cdots\ \forall t_k\ \forall c\ \exists B\ \forall x(x \in B \Leftrightarrow x \in c \text{ and } \alpha).
+ \]
+\end{axiom}
+
+\begin{axiom}[Union Axiom]
+ For any set $A$ there exists a set $B$ whose elements are exactly the members of the members of $A$:
+ \[
+  \forall x(x \in B \Leftrightarrow (\exists b \in A) x \in b).
+ \]
+\end{axiom}
+
+
+\section{Definitions}
+\begin{defn}
+ The concepts of ``set'' and ``member'' are \textit{primitive notions} which remain undefined.
+\end{defn}
+
+\begin{defn}
+ \textit{Logical consequences} or \textit{theorems} are derived sentences of the list of axioms. A sentence $\sigma$ is a \textit{logical consequence} of the axioms if any assignment of meaning to the undefined notions of set and member making the axioms true also make $\sigma$ true.
+\end{defn}
+
+\begin{defn}\label{emptyset}
+ $\varnothing$ is the set having no members.
+\end{defn}
+
+\begin{defn} For any sets $u$ and $v$, the \textit{pair set} $\{u,\ v\}$ is the set whose members are only $u$ and $v$.
+\end{defn}
+
+\begin{defn}
+ For any set $a$ and $b$, the \textit{union} $a \cup b$ is the set whose members are those sets belonging to either $a$ or $b$.
+\end{defn}
+
+\begin{defn}
+ For any set $a$, the \textit{power set} $\powerset a$ is the set whose members are exactly the subsets of $a$.
+\end{defn}
+
+\begin{defn}
+ For any $x$, the \textit{singleton} $\{x\}$ is the set formed by $\{x,\ x\}$.
+ \begin{remark}
+  We can form the set $\{x,\ x\}$ by the Pairing Axiom.
+ \end{remark}
+\end{defn}
+
+\begin{defn}
+ For any sets $x_1, x_2, x_3$,
+ \[
+  \{x_1,\ x_2,\ x_3\} := \{x_1,\ x_2\} \cup \{x_3\}.
+ \]
+\end{defn}
+
+\begin{defn}
+ The \textit{union} $\cup A$ of $A$ is the set
+ \begin{align*}
+  \cup A &= \Set*{x \st \text{$x$ belongs to some member of $A$}}\\
+         &= \Set*{x \st (\exists b \in A)\, x \in b}.
+ \end{align*}
+\end{defn}
+
+\begin{defn}
+ For any sets $A$ and $B$, the \textit{relative complement $A-B$ of $B$ in $A$}:
+ \[
+  A - B = \Set*{x \in A \st x \not\in B}.
+ \]
+\end{defn}
+
+\begin{defn}
+ The \textit{symmetric difference} $A+B$ of sets $A$ and $B$ is $(A - B) \cup (B - A)$.
+\end{defn}
+\section{Theorems}
+\thmproof{}{There cannot be two different sets, each of which has no members.}
+{Let $A$ and $B$ be sets, each of which has no members. Then exactly the same things belong to $A$ as to $B$. By the Extensionality Axiom, $A = B$.
+}
+
+\begin{thm}\label{identity}
+ Let $A$ be a set. Then $A = A$.
+\end{thm}
+\begin{proof}
+ Since for all $x$, $x \in A$ if and only if $x \in A$, by the Extensionality Axiom, we have $A = A$.
+\end{proof}
+
+\begin{thm}
+ $\varnothing = \{x\ |\ x \neq x\}$.
+\end{thm}
+\begin{proof}
+ Let $y$ be a set, $\varnothing' = \{x\ |\ x \neq x\}$ and suppose $y \in \varnothing'$. Then $y \neq y$. But by Theorem~\ref{identity}, $y = y$, a contradiction. Therefore, the premise $y \in \varnothing'$ is false. Hence, $\varnothing'$ has no members, by definition, we have $\varnothing' = \varnothing$.
+\end{proof}
+
+\begin{thm}\label{multi}
+ Let $x$ be a set. Then $\{x\} = \{x,\ x\}$.
+\end{thm}
+\begin{proof}
+ This follows from the Extensionality Axiom, since for any set $y$, $y \in \{x\} \Leftrightarrow y \in \{x,\ x\}$.
+\end{proof}
+
+\begin{thm}
+ Let $x$ be a set. Then the set $\{x\}$ exists.
+\end{thm}
+\begin{proof}
+ By the Pairing Axiom, there exists a set having members $x$, or $\{x,\ x\}$. By Theorem~\ref{multi}, $\{x,\ x\} = \{x\}$.
+\end{proof}
+
+\begin{thm}
+ Let $x$ be a set. Then $\cup x = x$.
+\end{thm}
+\begin{proof}
+ Follows directly from the Union Axiom.
+\end{proof}
+
+\thmproof{}{$\cup{\{a\}} = a$.}
+{We have
+ \begin{align*}
+  \cup{\{a\}} &= \{x\ |\ \text{$x$ belongs to some member of $\{a\}$}\}\\
+              &= \{x\ |\ x \in a\}\\
+              &= a.
+ \end{align*}
+}
+
+\thmproof{}{$\cup \varnothing = \varnothing$.}
+{We have $\cup \varnothing = \{x\ |\ \text{$x$ belongs to some member of $\varnothing$}\}$. But by definition, $\varnothing$ has no members, so there is no $x$ that can be a member of $\varnothing$. Hence, $\cup \varnothing = \varnothing$.
+}
+
+\thmproof{}{Whenever $A \subseteq B$, then $\cap B \subseteq \cap A$.}
+{Suppose $B$ is non-empty. Let $x \in \cap B$. Then for all $b \in B$, $x \in b$
+}
+
+\thmproof{}{$\powerset \varnothing = \{\varnothing\}$}
+{The power set of $\varnothing$ is the set of all subsets of $\varnothing$. Since $\varnothing$ is the only subset of $\varnothing$, $\powerset \varnothing = \{\varnothing \}$.
+}
+
+\begin{thm}\label{powersetMember}
+ If $b \subseteq A$, then $b \in \powerset A$.
+\end{thm}
+\begin{proof}
+ Since the power set of $A$ is the set of all subsets of $A$, and $b$ is a subset of $A$, $b \in \powerset A$.
+\end{proof}
+
+\begin{thm}
+ If $A \subseteq B$ then $\cap B \subseteq \cap A$.
+\end{thm}
+\begin{proof}
+ Suppose not. Suppose there exists a $x \in \cap B$ but $x \not\in \cap A$. This means that there is a $a \in A$ such that $x \not\in a$. Since $A \subseteq B$, $a \in B$. But $x$ is a member of \textit{all} members of $B$, a contradiction.
+\end{proof}
+
+\begin{thm}
+ $\Set{A \cup X \st X \in \mathscr{B}}$ is a set.
+\end{thm}
+\begin{proof}
+ Let $\mathscr{D} = \Set{A \cup X \st X \in \mathscr{B}}$. Let $A \cup X$ be an arbitrary member of $\mathscr{D}$. Since $X \in \mathscr{B}$, $X \subseteq \bigcup\!\mathscr{B}$, and so $A \cup X \subseteq A \cup \bigcup\!\mathscr{B}$. Hence $A \cup X \in \powerset\left(A \cup \bigcup\!\mathscr{B}\right)$.
+
+ With a subset axiom,
+ \[
+  \mathscr{D} = \Set*{t \in \powerset\left(A \cup \bigcup\!\mathscr{B}\right) \st t = A \cup X \ \text{for some $X$ in $\mathscr{B}$}}.
+ \]
+\end{proof}
+
+\begin{thm}
+ $\Set*{\powerset X \st X \in \mathscr{A}}$ is a set.
+\end{thm}
+\begin{proof}
+ Since $X \in \mathscr{A}$, $X \subseteq \bigcup\!\mathscr{A}$. And so $\powerset X \subseteq \powerset \bigcup\!\mathscr{A}$. It follows that $\powerset X \in \powerset \powerset \bigcup\!\mathscr{A}$. A subset axiom produces this set is
+ \[
+  \Set*{t \in \powerset \powerset \bigcup\!\mathscr{A} \st t = \powerset X\ \text{for some $X$ in $\mathscr{A}$}}.
+ \]
+\end{proof}
+
+\section{Exercises}
+\subsection{Introduction}
+
+\begin{exthm}
+ If $B \subseteq C$ then $\powerset B \subseteq \powerset C$.
+\end{exthm}
+\begin{proof}
+ Let $A \in \powerset B$. Then $A \subseteq B$. Since $B \subseteq C$, by transitivity of $\subseteq$, we have $A \subseteq C$. So $A \in \powerset C$.
+\end{proof}
+
+
+\subsection{Axioms and Operations}
+
+\begin{eg}[2]
+ $\cup A = \cup B$ does not imply $A = B$.
+ Let $A = \{\{1\}, \{2\}\}$ and $B = \{\{1, 2\}\}$.
+\end{eg}
+
+\begin{exthm}[3]\label{memberUnion}
+ If $b \in A$, then $b \subseteq \cup A$. (Or: Every member of a set $A$ is a subset of $\cup A$.)
+\end{exthm}
+\begin{proof}
+ If $b = \varnothing$, then as the empty set if a subset of every set, we have $\varnothing \subseteq \cup A$.  Suppose $b$ is non-empty and that $a \in b$. Since $b \in A$, $a$ is a member of a member of $A$, so $a \in \cup A$.
+\end{proof}
+\begin{remark}
+ If $A$ is a set, $b \subseteq \cup A$ does not imply $b \in A$. For example, $a = \{1,2\}$ and $B = \aSet{\aSet{1}, \aSet{2}}$.
+\end{remark}
+
+\begin{exthm}[4]
+ If $A \subseteq B$, then $\cup A \subseteq \cup B$
+\end{exthm}
+\begin{proof}
+ If $A$ is the empty set, this is clearly true. Suppose $A$ is non-empty and let $x \in \cup A$. Then there exists a $a \in A$ such that $x \in a$. But since $A \subseteq B$, $a \in B$, so $x$ is a member of a member of $B$. Therefore $x \in \cup B$.
+\end{proof}
+
+\begin{exthm}[Q 6a]
+ For any set $A$, $\cup \powerset A = A$
+\end{exthm}
+\begin{proof}
+ \begin{align*}
+  \cup \powerset A &= \cup \{X\ |\ \text{$X$ is a subset of $A$} \}\\
+                   &= \{x\ |\ \text{$x$ belongs to some subset of $A$}\}\\
+                   &= \{x\ |\ \text{$x$ belongs to $A$}\}\\
+                   &= A.
+ \end{align*}
+\end{proof}
+
+\begin{exthm}[Q 6b]
+ For any set $A$, $A \subseteq \powerset \cup A$
+\end{exthm}
+\begin{proof}
+ Let $a \in A$. By Exercise~\ref{memberUnion}, $a \subseteq \cup A$ and by Theorem~\ref{powersetMember} we have $a \in \powerset \cup A$.
+\end{proof}
+
+\begin{exthm}[6b]
+ If TODO then $A = \powerset \cup A$.
+\end{exthm}
+
+
+\begin{thm}[7b]
+ For any sets $A$ and $B$, $\powerset A \cap \powerset B = \powerset (A \cap B)$.
+\end{thm}
+\begin{proof}
+ Let $x$ be an arbitrary member of $\powerset A \cap \powerset B$. Then
+ \begin{align*}
+  x \in \powerset A \text{ and } x \in \powerset B &\Leftrightarrow
+  x \subseteq A \text { and } x \subseteq B\\
+                                                   &\Leftrightarrow x \subseteq A \cap B\\
+                                                   &\iff x \in \powerset (A \cap B)
+ \end{align*}
+\end{proof}
+
+\begin{exthm}[8]
+ There is no set to which every singleton belongs.
+\end{exthm}
+\begin{proof}
+ Let $A$ be a set to which every singleton belongs. Let $b$ be an arbitrary set. Then $b \in \cup A$ as $\{b\}$ is a singleton and so is in $A$. Hence $\cup A$ contains every set.
+\end{proof}
+
+\begin{eg}[9]
+ Let $a = \{1,2\}$ and $B = \{\{1,2\}\}$.
+\end{eg}
+
+\begin{exthm}[10]
+ If $a \in B$, then $\powerset a \in \powerset \powerset \cup B$.
+\end{exthm}
+
+\begin{proof}
+ This is equivalent to showing $\powerset a \subseteq \powerset \cup B$. Let $x \in \powerset a$, so $x \subseteq a$. Since $a \in B$, $a \subseteq \cup B$ (by Exercises~\ref{memberUnion}). So $x \subseteq \cup B$ or $x \in \powerset \cup B$.
+\end{proof}
+
+\begin{exthm}[13]
+ If $A \subseteq B$, then $C - B \subseteq C - A$.
+\end{exthm}
+\begin{proof}
+ Let $x \in C - B$. Then $x \in C$ but $x \not\in B$. Since $A \subseteq B$, if $x \not\in B$, then $x \not\in A$. So $x \in C - A$.
+\end{proof}
+
+\begin{eg}[14]
+ Let $A = \aSet{1,2}$ and $B = C = \aSet{2}$.
+\end{eg}
+
+\begin{exthm}[15a]
+ $A \cap (B + C) = (A \cap B) + (A \cap C)$.
+\end{exthm}
+\begin{proof}
+ Let $x \in A \cap (B + C)$. We consider two cases.
+ \begin{itemize}
+  \item $x \in A \cap B$ but $x \not\in C$. Then $x \not\in A \cap C$, so $x \in (A \cap B) + (A \cap C)$.
+  \item The case $x \in A \cap C$ but $x \not\in B$ is similar.
+ \end{itemize}
+\end{proof}
+\begin{exthm}[15b]
+ $A + (B + C) = (A + B) + C$
+\end{exthm}
+
+\begin{exthm}[17]
+ The following conditions are equivalent:
+ \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+   \item $A \subseteq B$
+   \item $A - B = \varnothing$
+   \item $A \cup B = B$
+   \item $A \cap B = A$
+  \end{enumerate}
+ \end{multicols}
+\end{exthm}
+\begin{proof}
+ We proceed by showing each condition implies each other.
+ \begin{itemize}
+  \item (b) $\Rightarrow$ (a)
+
+   Suppose $A - B = \varnothing$. Then there does not exist a $x$ such that $x \in A$ and $x \not\in B$. Or for all $x$, $x \not\in A$ or $x \in B$, which means for all $x$, $x \in A$ implies $x \in B$. Hence $A \subseteq B$.
+  \item (a) $\Rightarrow$ (c)
+
+   Let $x \in A \cup B$, since $A \subseteq B$, $x \in B$.
+
+  \item (c) $\Rightarrow$ (d)
+
+   Suppose $A \cup B = B$, then $A \cap B = A \cap (A \cup B) = A$.
+
+  \item (d) $\Rightarrow$ (b)
+
+   Suppose $A \cap B = A$, then
+   \[
+   A - B = (A \cap B) - B = \Set*{x \st x \in A \cap B\ \text{and}\ x \not\in B} = \varnothing.
+  \]
+
+ \end{itemize}
+\end{proof}
+\end{document}
+
