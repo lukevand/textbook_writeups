@@ -53,6 +53,9 @@
 \DeclarePairedDelimiter\aSet\{\}
 \renewcommand{\iff}{\Leftrightarrow}
 
+\let\oldbigcup\bigcup
+\renewcommand{\bigcup}{\oldbigcup\!}
+
 \begin{document}
 \maketitle
 
@@ -241,11 +244,11 @@ This can be rewritten as
  $\Set{A \cup X \st X \in \mathscr{B}}$ is a set.
 \end{thm}
 \begin{proof}
- Let $\mathscr{D} = \Set{A \cup X \st X \in \mathscr{B}}$. Let $A \cup X$ be an arbitrary member of $\mathscr{D}$. Since $X \in \mathscr{B}$, $X \subseteq \bigcup\!\mathscr{B}$, and so $A \cup X \subseteq A \cup \bigcup\!\mathscr{B}$. Hence $A \cup X \in \powerset\left(A \cup \bigcup\!\mathscr{B}\right)$.
+ Let $\mathscr{D} = \Set{A \cup X \st X \in \mathscr{B}}$. Let $A \cup X$ be an arbitrary member of $\mathscr{D}$. Since $X \in \mathscr{B}$, $X \subseteq \bigcup \mathscr{B}$, and so $A \cup X \subseteq A \cup \bigcup \mathscr{B}$. Hence $A \cup X \in \powerset\left(A \cup \bigcup  \mathscr{B}\right)$.
 
  With a subset axiom,
  \[
-  \mathscr{D} = \Set*{t \in \powerset\left(A \cup \bigcup\!\mathscr{B}\right) \st t = A \cup X \ \text{for some $X$ in $\mathscr{B}$}}.
+  \mathscr{D} = \Set*{t \in \powerset\left(A \cup \bigcup  \mathscr{B}\right) \st t = A \cup X \ \text{for some $X$ in $\mathscr{B}$}}.
  \]
 \end{proof}
 
@@ -253,9 +256,9 @@ This can be rewritten as
  $\Set*{\powerset X \st X \in \mathscr{A}}$ is a set.
 \end{thm}
 \begin{proof}
- Since $X \in \mathscr{A}$, $X \subseteq \bigcup\!\mathscr{A}$. And so $\powerset X \subseteq \powerset \bigcup\!\mathscr{A}$. It follows that $\powerset X \in \powerset \powerset \bigcup\!\mathscr{A}$. A subset axiom produces this set is
+ Since $X \in \mathscr{A}$, $X \subseteq \bigcup  \mathscr{A}$. And so $\powerset X \subseteq \powerset \bigcup  \mathscr{A}$. It follows that $\powerset X \in \powerset \powerset \bigcup  \mathscr{A}$. A subset axiom produces this set is
  \[
-  \Set*{t \in \powerset \powerset \bigcup\!\mathscr{A} \st t = \powerset X\ \text{for some $X$ in $\mathscr{A}$}}.
+  \Set*{t \in \powerset \powerset \bigcup  \mathscr{A} \st t = \powerset X\ \text{for some $X$ in $\mathscr{A}$}}.
  \]
 \end{proof}
 
@@ -412,5 +415,21 @@ This can be rewritten as
 \begin{eg}[19]
  Since $\varnothing \in \powerset (A - B)$ and $\varnothing \not\in \powerset A - \powerset B$, $\powerset(A - B) \neq \powerset A - \powerset B$.
 \end{eg}
-\end{document}
 
+\begin{exthm}[20]
+ Let $A, B$ and $C$ be sets such that $A \cup B = A \cup C$ and $A \cap B = A \cap C$. Then $B = C$.
+\end{exthm}
+\begin{proof}
+ Let $x \in B$. We consider two cases,
+ \begin{itemize}
+  \item Suppose $x \in A$. Then $x \in A \cap B = A \cap C$. So $x \in C$.
+  \item Suppose $x \not\in A$. Then $x \not\in A \cap B = A \cap C$. But since $x \in A \cup C$, we have $x \in C - A$ and so $x \in C$.
+ \end{itemize}
+ This shows $B \subseteq C$. The same argument starting with $x \in C$ shows that $C \subseteq B$.
+\end{proof}
+
+\begin{exthm}[21]
+ $\bigcup (A \cup B) = \bigcup A \cup \bigcup B$.
+\end{exthm}
+
+\end{document}
