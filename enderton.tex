@@ -227,7 +227,7 @@ This can be rewritten as
 \begin{defn}
   The \textit{composition} of $F$ and $G$ is the set
   \[
-    F \circ G = \Set{\ang{u, v} \st \exists(uGt \text{ and } tFv)}.
+    F \circ G = \Set{\ang{u, v} \st \exists t (uGt \text{ and } tFv)}.
   \]
 \end{defn}
 
@@ -252,6 +252,32 @@ This can be rewritten as
     ^A B = \Set*{F \st \text{F is a function from $A$ into $B$}}
   \]
   read ``B-pre-A''.
+\end{defn}
+
+\begin{defn}
+  $R$ is an \textit{equivalence relation on $A$} iff $R$ is a binary relation on $A$ that is reflexive on $A$, symmetric, and transitive.
+\end{defn}
+
+\begin{defn}
+  The set $[x]_R$ is defined by
+  \begin{equation*}
+    [x]_R = \Set*{t \st xRt}
+  \end{equation*}
+\end{defn}
+
+\begin{defn}
+  For any set $a$, it's \textit{successor} $a^+$ is defined by
+  \begin{equation*}
+    a^+ = a \cup \{a\}.
+  \end{equation*}
+\end{defn}
+
+\begin{defn}
+  A set $A$ is \textit{inductive} iff $\varnothing \in A$ and it is closed under successor, ie for every $a \in A$, $a^+ \in A$.
+\end{defn}
+
+\begin{defn}
+  A \textit{natural number} is a set that belongs to every inductive set.
 \end{defn}
 
 \section{Theorems}
@@ -351,6 +377,37 @@ This can be rewritten as
   \]
 \end{proof}
 
+\begin{thmproof}{}
+  {For nonempty set $A$, $^{A} \varnothing = \varnothing$.}
+  {Let $f \in\, ^{A} \varnothing$ and suppose $\ang{x, y} \in f$, then $x \in A$ and $y \in \varnothing$, which is impossible. Therefore, $^{A} \varnothing = \varnothing$.}
+\end{thmproof}
+
+\begin{thmproof}{}
+  {For any set $A$, $^{\varnothing} A = \{\varnothing\}$.}
+  {Since $\varnothing : \varnothing \rightarrow A$ and $\varnothing$ is the only function with an empty domain.}
+\end{thmproof}
+
+\begin{thm}
+  The following are equvialant:
+  \begin{enumerate}
+    \item $x \in a \in A \rightarrow x \in A$
+    \item $\bigcup A \subseteq A$
+    \item $a \in A \rightarrow a \subseteq A$
+    \item $A \subseteq \powerset(A)$.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  \begin{itemize}
+    \item ($1 \rightarrow 2$) Suppose $x \in \bigcup A$. Then there is an $a \in A$, such that $x \in a$. By (1), $x \in A$. Therefore $\bigcup A \subseteq A$.
+
+    \item ($2 \rightarrow 3$) Let $a \in A$. If $a = \varnothing$, then $a \subseteq A$. Suppose then $a \neq \varnothing$, then there is an $x \in a$. Since $x \in a$ implies $x \in \bigcup A$, by (2), $x \in A$. Therefore $a \subseteq A$.
+
+    \item ($3 \rightarrow 4$) Let $a \in A$. By (3), $a \subseteq A$, so $a \in \powerset(A)$.
+
+    \item ($4 \rightarrow 1$) Suppose $x \in a \in A$. By (4), since $a \in A$, $a \in \powerset(A)$, so $x \in a \subseteq A$. Therefore $x \in A$.
+  \end{itemize}
+\end{proof}
+
 \section{Exercises}
 \subsection{Introduction}
 
@@ -360,7 +417,6 @@ This can be rewritten as
 \begin{proof}
   Let $A \in \powerset B$. Then $A \subseteq B$. Since $B \subseteq C$, by transitivity of $\subseteq$, we have $A \subseteq C$. So $A \in \powerset C$.
 \end{proof}
-
 
 \subsection{Axioms and Operations}
 
@@ -757,5 +813,95 @@ For the second,
                                  &\iff (\exists A \in \mathscr{A}) y \in F[A]\\
                                  &\iff y \in \bigcup \Set*{F[A] \st A \in \mathscr{A}}.
   \end{align*}
+\end{proof}
+
+\begin{exthm}[27]
+  For any sets $F$ and $G$, $\dom{F \circ G} = G^{-1}[\dom{F}]$.
+\end{exthm}
+\begin{proof}
+  We have,
+  \begin{align*}
+    \dom{F \circ G} &= \Set*{u \st \exists y \ang{u, v} \in F \circ G}\\
+                    &= \Set*{u \st (\exists v \exists t) uGt \text{ and } tFv}\\
+                    &= \Set*{u \st \exists t \in \dom{F}\ uGt}\\
+                    &= \Set*{u \st (\exists t \in \dom{F})\ tG^{-1}u}\\
+                    &= \ran{(G^{-1} \restriction \dom F)}\\
+                    &= G^{-1}[\dom{F}].
+  \end{align*}
+\end{proof}
+
+\begin{exthm}[28]
+  If $f$ is a one-to-one function from $A$ into $B$, and that $G$ is the function with $\dom{G} = \powerset{A}$ defined by $G(X) = f[X]$, then $G$ maps $\powerset{A}$ one-to-one into $\powerset{B}$.
+\end{exthm}
+\begin{proof}
+  Let $X$ and $Y$ be arbitrary elements of $\powerset{A}$ and that $G(X) = G(Y)$. Suppose $x \in X$. Then $f(x) \in f[X] = G(X) = G(Y) = f[Y]$. So $x \in Y$. Therefore, $X \subseteq Y$. Similar reasoning shows that $Y \subseteq X$. And so, $X = Y$.
+\end{proof}
+
+\begin{exthm}[29]
+  Assume that $f: A \rightarrow B$ and define $G: B \rightarrow \powerset{A}$ by $G(b) = \Set*{x \in A \st f(x) = b}$. Then if $f$ maps $A$ onto $B$, then $G$ is one-to-one.
+\end{exthm}
+\begin{proof}
+
+\end{proof}
+
+\begin{exthm}[31]
+  The following are equivalent:
+  \begin{itemize}
+    \item For any relation $R$ there is a function $H \subseteq R$ with $\dom{H} = \dom{R}$.
+    \item For any set $I$ and any function $H$ with domain $I$, if $H(i) \neq \varnothing$ for all $i$ in $I$, then $\bigtimes_{i \in I} H(i) \neq \varnothing$.
+\end{itemize}
+\end{exthm}
+\begin{proof}
+  \begin{itemize}
+    \item ($\Rightarrow$) Let $I$ be a set and $H$ be a function with $\dom{H} = I$. Suppose
+  \end{itemize}
+\end{proof}
+
+\begin{exthm}[34a]
+  Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive relation. Then $\bigcap \mathscr{A}$ is a transitive relation.
+\end{exthm}
+\begin{proof}
+  Let $\ang{x,y}, \ang{y,z} \in \bigcap \mathscr{A}$. There for all $R \in \mathscr{A}$, $\ang{x,y} \in R$, and $\ang{y,z} \in R$. Since $R$ is transitive, $\ang{x, z} \in R$.
+\end{proof}
+
+\begin{exthm}[34a]
+  Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive relation. Then $\bigcup \mathscr{A}$ is not a transitive relation.
+\end{exthm}
+\begin{proof}
+  Let $\mathscr{A} = \{\{1, 2\}, \{2, 3\}\}$.
+\end{proof}
+
+\begin{exthm}[35]
+  For any $R$ and $x$, $[x]_R = R[\{x\}]$.
+\end{exthm}
+\begin{proof}
+  \begin{align*}
+    R[\{x\}] &= \ran(R \restriction \{x\}\\
+             &= \Set*{y \st \exists u \in \{x\}, uRy}\\
+             &= \Set*{y \st xRy}\\
+             &= [x]_R.
+  \end{align*}
+\end{proof}
+
+\subsection{Natural numbers}
+\begin{exthm}[2]
+  If $a$ is a transitive set, then $a^+$ is a transitive set.
+\end{exthm}
+\begin{proof}
+  We will show that $\bigcup (a^+) \subseteq a^+$, showing $a^+$ is a transitive set. Since $\bigcup (a^+) = a \subseteq a^+$.
+\end{proof}
+
+\begin{exthm}[3a]
+  If $a$ is a transitive set, then $\powerset a$ is a transitive set.
+\end{exthm}
+\begin{proof}
+  Firstly, $\bigcup \powerset(a) = a$. Then since $a$ is transitive, $a \subseteq \powerset(a)$, so $\bigcup \powerset(a) \subseteq \powerset(a)$.
+\end{proof}
+
+\begin{exthm}[5a]
+  If every member of $\mathscr{A}$ is a transitive set, then $\bigcup \mathscr{A}$ is a transitive set.
+\end{exthm}
+\begin{proof}
+  Let $a \in \bigcup \mathscr{A}$. Then there is an $A \in \mathscr{A}$ such that $a \in A$. Since $A$ is transitive, $a \subseteq A$, and so $a \subseteq \bigcup \mathscr{A}$.
 \end{proof}
 \end{document}
