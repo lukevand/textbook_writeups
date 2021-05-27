@@ -462,8 +462,15 @@ This can be rewritten as
 \end{proof}
 
 \begin{exthm}[6b]
-  If TODO then $A = \powerset \cup A$.
+  If $A = \powerset B$ for some set $B$, then $A = \powerset(\cup A)$.
 \end{exthm}
+\begin{proof}
+  \begin{align*}
+    \powerset(\cup A) &= \powerset(\cup (\powerset B))\\
+                         &= \powerset(B)\\
+                         &= A.
+  \end{align*}
+\end{proof}
 
 
 \begin{exthm}[7b]
