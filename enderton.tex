@@ -529,6 +529,9 @@ This can be rewritten as
 \begin{exthm}[15b]
   $A + (B + C) = (A + B) + C$
 \end{exthm}
+\begin{proof}
+  TODO
+\end{proof}
 
 \begin{exthm}[17]
   The following conditions are equivalent:
@@ -665,6 +668,9 @@ This can be rewritten as
               &= A \times B.
   \end{align*}
 \end{proof}
+
+\subsubsection{Relations}
+
 \begin{exthm}[6]
   A set $A$ is a relation if and only if $A \subseteq \dom{A} \times \ran{A}$.
   \begin{itemize}
@@ -701,6 +707,9 @@ This can be rewritten as
   If union were replaced with interestion in the previous question we could not interchange the $\exists$ and $\forall$.
 \end{remark}
 
+\subsubsection{n-ary Relations}
+\subsubsection{Functions}
+
 \begin{exthm}[12]
   Suppose $f$ and $g$ are functions. Then
   \[
@@ -711,42 +720,39 @@ This can be rewritten as
   Suppose $f \subseteq g$ and let $x \in \dom{f}$. Then there exists $y$ such that $\ang{x, y} \in f \subseteq g$, so $x \in \dom{g}$. Since $xfy$ and $xgy$, we have $f(x) = g(x)$. And so on.
 \end{proof}
 
-\begin{exthm}
+\begin{exthm}[13]
   If $f$ and $g$ are functions with $f \subseteq g$ and $dom g \subseteq \dom{f}$, then $f = g$.
 \end{exthm}
 \begin{proof}
   This follows from the previous exercise.
 \end{proof}
 
-\begin{exthm}[14a,b]
+\begin{exthm}[14a]
   Let $f$ and $g$ be functions. Then $f \cap g$ is a function.
 \end{exthm}
-
 \begin{proof}
   Let $x(f\cap g)y$ and $x(f \cap g)y'$. Then since $f$ and $g$ are functions, it follows $y = y'$.
 \end{proof}
 
-\begin{exthm}
+\begin{exthm}[14b]
   If $f$ and $g$ are funcitons, then $f \cup g$ is a function iff $f(x) = g(x)$ for every $x$ in $\dom{f} \cap \dom{g}$.
 \end{exthm}
-
 \begin{proof}
   Let $x \in \dom{f} \cup \dom{g}$ such that $f(x) \neq g(x)$. Then $\ang{x, f(x)} \in f$ and $\ang{x, g(x)} \in g$. So $\ang{x, f(x)} \in f \cup g$, and $\ang{x, g(x)} \in f \cup g$, but $f(x) \neq g(x)$, so $f \cup g$ is not a function.
 
   Similar logic shows that if $f(x) = g(x)$ in the shared domain, then $f \cup g$ is function.
 \end{proof}
-\begin{thm}[15]
-  Let $\mathscr{A}$ be a set of functions such that for any $f$ and $g$ in $\mathscr{A}$, either $f \subseteq g$ or $g \subseteq f$. Then $\bigcup \mathscr{A}$ is a function.
-\end{thm}
 
+\begin{exthm}[15]
+  Let $\mathscr{A}$ be a set of functions such that for any $f$ and $g$ in $\mathscr{A}$, either $f \subseteq g$ or $g \subseteq f$. Then $\bigcup \mathscr{A}$ is a function.
+\end{exthm}
 \begin{proof}
   Suppose $x \bigcup \mathscr{A} y$ and $x \bigcup \mathscr{A} y'$, then $\ang{x,y} \in f$, for some $f \in \mathscr{A}$, and $\ang{x, y'} \in g$, for some $g \in \mathscr{A}$. Without loss of generality, suppose $f \subseteq g$, then $\ang{x, y} \in g$. Since $g$ is a function, it follows $y = y'$. Hence, $\bigcup \mathscr{A}$ is a function.
 \end{proof}
 
-\begin{thm}[22(b)]
+\begin{exthm}[22(b)]
   For any sets, $(F \circ G)[A] = F[G[A]]$.
-\end{thm}
-
+\end{exthm}
 \begin{proof}
   \begin{align*}
     y \in (F \circ G)[A] &\iff \exists x \in A\, x (F \circ G)y\\
@@ -756,10 +762,9 @@ This can be rewritten as
   \end{align*}
 \end{proof}
 
-\begin{thm}
+\begin{exthm}[23]
   Let $I_A$ be the identity function on the set $A$. For any sets $B$ and $C$, $B \circ I_A = B \restriction A$ and $I_A[C] = A \cap C$.
-\end{thm}
-
+\end{exthm}
 \begin{proof}
   For the first,
   \begin{align*}
@@ -851,6 +856,8 @@ For the second,
 
 \end{proof}
 
+\subsubsection{Infinite Cartesian Products}
+
 \begin{exthm}[31]
   The following are equivalent:
   \begin{itemize}
@@ -861,8 +868,11 @@ For the second,
 \begin{proof}
   \begin{itemize}
     \item ($\Rightarrow$) Let $I$ be a set and $H$ be a function with $\dom{H} = I$. Suppose
+      TODO
   \end{itemize}
 \end{proof}
+
+\subsubsection{Equivalance Relations}
 
 \begin{exthm}[34a]
   Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive relation. Then $\bigcap \mathscr{A}$ is a transitive relation.
