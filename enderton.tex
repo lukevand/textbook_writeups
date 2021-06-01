@@ -588,6 +588,31 @@ This can be rewritten as
 
   \end{itemize}
 \end{proof}
+
+\begin{eg}[18]
+  Assume that $A$ and $B$ are subsets of $S$. Then there are 15 different sets that can be made from these three by use of the binary operations $\cup$, $\cap$, and $-$.
+
+  This can be seen by spliting the sets in 4 different sets, $S - (A \cup B)$, $A - B$, $B - A$, and $A \cap B$. For each of these sets, we can either include or exclude it. Excluding not selecting any, we have $2^4 - 1 = 15$ possible sets. These are,
+
+  \begin{enumerate}
+    \item $S - (A \cup B)$
+    \item $A - B$
+    \item $B - A$
+    \item $A \cap B$
+    \item $S - B$
+    \item $S - A$
+    \item $(A - B) \cup (B - A)$
+    \item $(S - (A \cap B)) \cup (A \cap B)$ (complement of symmetric difference)
+    \item $A$
+    \item $B$
+    \item $S - (A \cap B)$
+    \item $A \cup (S - B)$
+    \item $B \cup (S - A)$
+    \item $A \cup B$
+    \item $S$
+  \end{enumerate}
+\end{eg}
+
 \begin{eg}[19]
   Since $\varnothing \in \powerset (A - B)$ and $\varnothing \not\in \powerset A - \powerset B$, $\powerset(A - B) \neq \powerset A - \powerset B$.
 \end{eg}
