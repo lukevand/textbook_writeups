@@ -411,15 +411,21 @@ This can be rewritten as
 \section{Exercises}
 \subsection{Introduction}
 
-\begin{exthm}
+\subsubsection{Baby Set Theory}
+\begin{exthm}[3]
   If $B \subseteq C$ then $\powerset B \subseteq \powerset C$.
 \end{exthm}
 \begin{proof}
   Let $A \in \powerset B$. Then $A \subseteq B$. Since $B \subseteq C$, by transitivity of $\subseteq$, we have $A \subseteq C$. So $A \in \powerset C$.
 \end{proof}
 
+\begin{eg}
+  Define the rank of a set $c$ to be the least $\alpha$ such that $c \subseteq V_\alpha$. Then the rank of $\{\{\varnothing\}\}$ is 2.
+\end{eg}
+
 \subsection{Axioms and Operations}
 
+\subsubsection{Arbitrary Unions and Intersections}
 \begin{eg}[2]
   $\cup A = \cup B$ does not imply $A = B$.
   Let $A = \{\{1\}, \{2\}\}$ and $B = \{\{1, 2\}\}$.
@@ -473,7 +479,7 @@ This can be rewritten as
 \end{proof}
 
 
-\begin{exthm}[7b]
+\begin{exthm}[7a]
   For any sets $A$ and $B$, $\powerset A \cap \powerset B = \powerset (A \cap B)$.
 \end{exthm}
 \begin{proof}
@@ -484,6 +490,20 @@ This can be rewritten as
                                                      &\Leftrightarrow x \subseteq A \cap B\\
                                                      &\iff x \in \powerset (A \cap B)
   \end{align*}
+\end{proof}
+
+\begin{exthm}[7b]
+  For any sets $A$ and $B$, $\powerset A \cup \powerset B \subseteq \powerset(A \cup B)$.
+\end{exthm}
+\begin{proof}
+  Let $x \in \powerset A \cup \powerset B$. So $x \in \powerset A$ or $x \in \powerset B$. Suppose $x \in \powerset A$. Since $A \subseteq A \cup B$, $x \in \powerset (A \cup B)$. The case $x \in \powerset B$ is similar.
+\end{proof}
+
+\begin{exthm}[7b]
+  If $A \subseteq B$, then $\powerset A \cup \powerset B = \powerset(A \cup B)$.
+\end{exthm}
+\begin{proof}
+  Since $A \subseteq B$, $\powerset A \subseteq \powerset B$, and so $\powerset A \cup \powerset B = \powerset B = \powerset (A \cup B)$.
 \end{proof}
 
 \begin{exthm}[8]
@@ -500,10 +520,11 @@ This can be rewritten as
 \begin{exthm}[10]
   If $a \in B$, then $\powerset a \in \powerset \powerset \cup B$.
 \end{exthm}
-
 \begin{proof}
   This is equivalent to showing $\powerset a \subseteq \powerset \cup B$. Let $x \in \powerset a$, so $x \subseteq a$. Since $a \in B$, $a \subseteq \cup B$ (by Exercises~\ref{memberUnion}). So $x \subseteq \cup B$ or $x \in \powerset \cup B$.
 \end{proof}
+
+\subsubsection{Algebra of Sets}
 
 \begin{exthm}[13]
   If $A \subseteq B$, then $C - B \subseteq C - A$.
@@ -627,9 +648,21 @@ This can be rewritten as
   Equality never holds.
 \end{remark}
 
-\begin{exthm}
+\begin{exthm}[25]
   $A \cup \bigcup \mathscr{B} = \bigcup\Set*{A \cup X \st X \in \mathscr{B}}$.
 \end{exthm}
+\begin{proof}
+  TODO
+\end{proof}
+
+\subsubsection{Review Exercises}
+
+\begin{exthm}[27]
+  $\bigcap A \cap \bigcap B \neq \bigcap(A \cap B)$.
+\end{exthm}
+\begin{proof}
+  Let $A = \{\{1\}, \{2\}\}$, and $B = \{1\}$.
+\end{proof}
 
 \subsection{Relations and Functions}
 \begin{eg}[1]
