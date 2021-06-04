@@ -640,7 +640,8 @@ This can be rewritten as
                        &= \bigcup A \cup \bigcup B.
   \end{align*}
 \end{proof}
-\begin{exthm}
+
+\begin{exthm}[23]
   If $\mathscr{B}$ is nonempty, then $A \cup \bigcup \mathscr{B} = \bigcap \Set*{A \cup X \st X \in \mathscr{B}}$.
 \end{exthm}
 \begin{proof}
@@ -959,6 +960,7 @@ For the second,
 \end{proof}
 
 \subsection{Natural numbers}
+\subsubsection{Peano's Postulates}
 \begin{exthm}[2]
   If $a$ is a transitive set, then $a^+$ is a transitive set.
 \end{exthm}
@@ -973,10 +975,37 @@ For the second,
   Firstly, $\bigcup \powerset(a) = a$. Then since $a$ is transitive, $a \subseteq \powerset(a)$, so $\bigcup \powerset(a) \subseteq \powerset(a)$.
 \end{proof}
 
+\begin{exthm}[3b]
+  If $\powerset a$ is a transitive set, then $a$ is a transitive set.
+\end{exthm}
+\begin{proof}
+  Let $x \in a$. Then for some $y \in \powerset a$, $x \in y \in \powerset a$. Since $\powerset a$ is a transitive set, $x \in \powerset a$, or $x \subseteq a$. Hence, $a$ is a transitive set.
+\end{proof}
+
+\begin{exthm}
+  If $a$ is a transtive set, then $\bigcup a$ is also a transitive set.
+\end{exthm}
+\begin{proof}
+  Let $x \in y \in \bigcup a$. Then there is a $Y \in a$ such that $y \in Y \in a$. Since $a$ is a transitive set, $y \in a$. So $x \in y \in a$. Therefore $x \in \bigcup a$.
+\end{proof}
+
 \begin{exthm}[5a]
   If every member of $\mathscr{A}$ is a transitive set, then $\bigcup \mathscr{A}$ is a transitive set.
 \end{exthm}
 \begin{proof}
   Let $a \in \bigcup \mathscr{A}$. Then there is an $A \in \mathscr{A}$ such that $a \in A$. Since $A$ is transitive, $a \subseteq A$, and so $a \subseteq \bigcup \mathscr{A}$.
+\end{proof}
+
+\begin{exthm}[6]
+  If $\bigcup(a^+) = a$, then $a$ is a transitive set.
+\end{exthm}
+\begin{proof}
+  Suppose $a$ is a transitive set. Let $x \in y \in \bigcup(a^+)$. Then there is a $Y \in a^+$, such that $x \in Y$.
+
+  So $x \in Y \in a^+ = a \cup \{a\}$. If $x \in Y \in a$, then since $a$ is a transitive set, $x \in a$.
+
+  If $x \in Y \in \{a\}$, then $x \in Y = a$. Hence $x \in a$.
+
+
 \end{proof}
 \end{document}
