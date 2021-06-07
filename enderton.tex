@@ -217,7 +217,7 @@ This can be rewritten as
 \end{defn}
 
 \begin{defn}
-  For a function $F$ and a point $x$ in $\dom F$, the unquie $y$ such that $xFy$ is called the \textit{value of $F$ at $x$}, denoted by $F(x)$.
+  For a function $F$ and a point $x$ in $\dom F$, the unique $y$ such that $xFy$ is called the \textit{value of $F$ at $x$}, denoted by $F(x)$.
 \end{defn}
 
 \begin{defn}
@@ -293,7 +293,7 @@ This can be rewritten as
 \end{proof}
 
 \begin{thm}
-  $\varnothing = \{x\ |\ x \neq x\}$.
+  $\varnothing = \Set*{x \st x \neq x}$.
 \end{thm}
 \begin{proof}
   Let $y$ be a set, $\varnothing' = \{x\ |\ x \neq x\}$ and suppose $y \in \varnothing'$. Then $y \neq y$. But by Theorem~\ref{identity}, $y = y$, a contradiction. Therefore, the premise $y \in \varnothing'$ is false. Hence, $\varnothing'$ has no members, by definition, we have $\varnothing' = \varnothing$.
@@ -378,7 +378,7 @@ This can be rewritten as
 \end{proof}
 
 \begin{thmproof}{}
-  {For nonempty set $A$, $^{A} \varnothing = \varnothing$.}
+  {For nonempty set $A$, $^{A}\varnothing = \varnothing$.}
   {Let $f \in\, ^{A} \varnothing$ and suppose $\ang{x, y} \in f$, then $x \in A$ and $y \in \varnothing$, which is impossible. Therefore, $^{A} \varnothing = \varnothing$.}
 \end{thmproof}
 
@@ -388,7 +388,7 @@ This can be rewritten as
 \end{thmproof}
 
 \begin{thm}
-  The following are equvialant:
+  The following are equivalent:
   \begin{enumerate}
     \item $x \in a \in A \rightarrow x \in A$
     \item $\bigcup A \subseteq A$
@@ -478,7 +478,6 @@ This can be rewritten as
   \end{align*}
 \end{proof}
 
-
 \begin{exthm}[7a]
   For any sets $A$ and $B$, $\powerset A \cap \powerset B = \powerset (A \cap B)$.
 \end{exthm}
@@ -525,7 +524,6 @@ This can be rewritten as
 \end{proof}
 
 \subsubsection{Algebra of Sets}
-
 \begin{exthm}[13]
   If $A \subseteq B$, then $C - B \subseteq C - A$.
 \end{exthm}
@@ -547,6 +545,7 @@ This can be rewritten as
     \item The case $x \in A \cap C$ but $x \not\in B$ is similar.
   \end{itemize}
 \end{proof}
+
 \begin{exthm}[15b]
   $A + (B + C) = (A + B) + C$
 \end{exthm}
@@ -592,7 +591,7 @@ This can be rewritten as
 \begin{eg}[18]
   Assume that $A$ and $B$ are subsets of $S$. Then there are 15 different sets that can be made from these three by use of the binary operations $\cup$, $\cap$, and $-$.
 
-  This can be seen by spliting the sets in 4 different sets, $S - (A \cup B)$, $A - B$, $B - A$, and $A \cap B$. For each of these sets, we can either include or exclude it. Excluding not selecting any, we have $2^4 - 1 = 15$ possible sets. These are,
+  This can be seen by splitting the sets in 4 different sets, $S - (A \cup B)$, $A - B$, $B - A$, and $A \cap B$. For each of these sets, we can either include or exclude it. Excluding not selecting any, we have $2^4 - 1 = 15$ possible sets. These are,
 
   \begin{enumerate}
     \item $S - (A \cup B)$
@@ -682,7 +681,6 @@ This can be rewritten as
 \end{proof}
 
 \subsubsection{Review Exercises}
-
 \begin{exthm}[27]
   $\bigcap A \cap \bigcap B \neq \bigcap(A \cap B)$.
 \end{exthm}
@@ -737,6 +735,7 @@ This can be rewritten as
     \item ($\Leftarrow$) Suppose $A \subseteq \dom{A} \times \ran{A}$. Suppose $t \in A$ an $t$ is not an ordered pair. But $t \in A$ so $t \in \dom{A} \times \ran{A}$. Therefore $t$ is an element of a set of ordered pairs.
   \end{itemize}
 \end{exthm}
+
 \begin{exthm}[7]
   If $R$ is a relation, then $\fld{R} = \bigcup\bigcup R$.
 \end{exthm}
@@ -745,6 +744,7 @@ This can be rewritten as
 
   Let $x \in \bigcup\bigcup R$. Since $R$ a relation, $R = \Set{\ang{x, y} \st \ang{x,y} \in R}$. So $\bigcup \bigcup R = \Set*{u \st \exists \ang{x,y} \in R \text{ and } u = x \text{ or } u = y}$. Hence $x \in \dom{R} \cup \ran{R}$.
 \end{proof}
+
 \begin{exthm}[8]
   For any set $\mathscr{A}$,
   \begin{align*}
@@ -762,8 +762,9 @@ This can be rewritten as
   \end{align*}
   A similar argument holds for $\ran \bigcup \mathscr{A}$.
 \end{proof}
+
 \begin{remark}[9]
-  If union were replaced with interestion in the previous question we could not interchange the $\exists$ and $\forall$.
+  If union were replaced with intersection in the previous question we could not interchange the $\exists$ and $\forall$.
 \end{remark}
 
 \subsubsection{n-ary Relations}
@@ -794,7 +795,7 @@ This can be rewritten as
 \end{proof}
 
 \begin{exthm}[14b]
-  If $f$ and $g$ are funcitons, then $f \cup g$ is a function iff $f(x) = g(x)$ for every $x$ in $\dom{f} \cap \dom{g}$.
+  If $f$ and $g$ are functions, then $f \cup g$ is a function iff $f(x) = g(x)$ for every $x$ in $\dom{f} \cap \dom{g}$.
 \end{exthm}
 \begin{proof}
   Let $x \in \dom{f} \cup \dom{g}$ such that $f(x) \neq g(x)$. Then $\ang{x, f(x)} \in f$ and $\ang{x, g(x)} \in g$. So $\ang{x, f(x)} \in f \cup g$, and $\ang{x, g(x)} \in f \cup g$, but $f(x) \neq g(x)$, so $f \cup g$ is not a function.
@@ -831,7 +832,6 @@ This can be rewritten as
                 &= \Set{\ang{x,y} \st \exists t (t \in A \land tBy)}\\
                 &= B \restriction A.
   \end{align*}
-\end{proof}
 
 For the second,
 
@@ -840,11 +840,11 @@ For the second,
           &= \Set{y \st \exists y (y \in C \land y \in I_A)}\\
           &= A \cap C.
 \end{align*}
+\end{proof}
 
 \begin{exthm}[24]
   For a function $F$, $F^{-1}[A] = \Set{x \in dom{F} \st F(x) \in A}$.
 \end{exthm}
-
 \begin{proof}
   Since $F^{-1} = \Set{\ang{y,x} \st \ang{x, y} \in F}$, we have
   \begin{align*}
@@ -858,7 +858,6 @@ For the second,
 \begin{exthm}[25]
   Suppose $G$ is a function, then $G \circ G^{-1} = I_{\ran{G}}$.
 \end{exthm}
-
 \begin{proof}
   We have,
   \begin{align*}
@@ -875,7 +874,6 @@ For the second,
 \begin{exthm}[26]
   Let $F$ be a set. Then $F[\bigcup \mathscr{A}] = \bigcup \Set*{F[A] \st A \in \mathscr{A}}$.
 \end{exthm}
-
 \begin{proof}
   We have,
   \begin{align*}
@@ -912,7 +910,7 @@ For the second,
   Assume that $f: A \rightarrow B$ and define $G: B \rightarrow \powerset{A}$ by $G(b) = \Set*{x \in A \st f(x) = b}$. Then if $f$ maps $A$ onto $B$, then $G$ is one-to-one.
 \end{exthm}
 \begin{proof}
-
+  TODO
 \end{proof}
 
 \subsubsection{Infinite Cartesian Products}
@@ -931,7 +929,7 @@ For the second,
   \end{itemize}
 \end{proof}
 
-\subsubsection{Equivalance Relations}
+\subsubsection{Equivalence Relations}
 
 \begin{exthm}[34a]
   Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive relation. Then $\bigcap \mathscr{A}$ is a transitive relation.
@@ -952,7 +950,7 @@ For the second,
 \end{exthm}
 \begin{proof}
   \begin{align*}
-    R[\{x\}] &= \ran(R \restriction \{x\}\\
+    R[\{x\}] &= \ran(R \restriction \{x\})\\
              &= \Set*{y \st \exists u \in \{x\}, uRy}\\
              &= \Set*{y \st xRy}\\
              &= [x]_R.
@@ -983,7 +981,7 @@ For the second,
 \end{proof}
 
 \begin{exthm}
-  If $a$ is a transtive set, then $\bigcup a$ is also a transitive set.
+  If $a$ is a transitive set, then $\bigcup a$ is also a transitive set.
 \end{exthm}
 \begin{proof}
   Let $x \in y \in \bigcup a$. Then there is a $Y \in a$ such that $y \in Y \in a$. Since $a$ is a transitive set, $y \in a$. So $x \in y \in a$. Therefore $x \in \bigcup a$.
@@ -1005,7 +1003,26 @@ For the second,
   So $x \in Y \in a^+ = a \cup \{a\}$. If $x \in Y \in a$, then since $a$ is a transitive set, $x \in a$.
 
   If $x \in Y \in \{a\}$, then $x \in Y = a$. Hence $x \in a$.
+\end{proof}
 
+\begin{exthm}[7]
+  Let $A$ be a set, $a \in A$, and $F: A \mapsto A$. Then there exists a unique function $h: \omega \mapsto A$ such that
+\begin{align}
+  h(0) &= a,\\
+  h(n^+) &= F(h(n)), \ \text{for every $n$ in $\omega$.}
+  \end{align}
+\end{exthm}
+\begin{proof}
+  This is a proof of the uniqueness. Let $h_1$ and $h_2$ both satisfy the conclusion of the theorem. Let $S = \Set*{n \in \omega \st h_1(n) = h_2(n)}$. We will show $S$ is inductive.
 
+  $0 \in S$, as both $h_1$ and $h_2$ are acceptable, so $h_1(0) = a = h_2(0)$.
+
+  Suppose $k \in S$. Then since $h_1$ is acceptable,
+  \begin{align*}
+    h_1(k^+) &= F(h_1(k))\\
+             &= F(h_2(k))\\
+             &= h_2(k^+).
+  \end{align*}
+  So $k^+ \in S$. Hence, $S$ is inductive. Therefore, $h$ is unique.
 \end{proof}
 \end{document}
