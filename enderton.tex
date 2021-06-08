@@ -1025,4 +1025,25 @@ For the second,
   \end{align*}
   So $k^+ \in S$. Hence, $S$ is inductive. Therefore, $h$ is unique.
 \end{proof}
+
+\begin{exthm}[8]
+  Let $f$ be a one-to-one function from $A$ into $A$, and assume that $c \in A - \ran{f}$. Define $h: \omega \mapsto A$ by recursion:
+  \begin{align*}
+    h(0) &= c\\
+    h(n^+) &= f(h(n)).
+  \end{align*}
+  Then $h$ is one-to-one.
+\end{exthm}
+\begin{proof}
+  Let $T = \Set*{n \in \omega \st h(m) = h(n) \implies m = n}$.
+
+  First we will show that $0 \in T$. Let $m \in \omega$, and $m \neq 0$, then $m = p^+$, for some $p \in \omega$. Then
+\begin{align*}
+  h(p^+) &= f(h(p))\\
+         &\in \ran{f}.
+\end{align*}
+So $h(p^+) = h(m) \neq c$. So $h(m) \neq h(0)$ when $m \neq 0$.
+
+The proof that $k \in T$ implies $k^+ \in T$ is similar to Theorem 4H.
+\end{proof}
 \end{document}
