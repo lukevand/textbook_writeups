@@ -1046,4 +1046,64 @@ So $h(p^+) = h(m) \neq c$. So $h(m) \neq h(0)$ when $m \neq 0$.
 
 The proof that $k \in T$ implies $k^+ \in T$ is similar to Theorem 4H.
 \end{proof}
+
+\begin{exthm}[9]
+  Let $f$ be a function from $B$ into $B$, and assume $A \subseteq B$. Define $C^*$ to be the intersection of the closed supersets of $A$,
+  \begin{equation*}
+    C^* = \bigcap \Set*{X \st A \subseteq X \subseteq B \ \&\ f[X] \subseteq X}.
+  \end{equation*}
+
+  Define $h$ recursively by
+  \begin{align*}
+    h(0) &= A,\\
+    h(n^+) &= h(n) \cup f[h(n)]
+  \end{align*}
+  and define $C_*$ to be $\bigcup \ran{h}$, or
+  \begin{equation*}
+    C_* = \bigcup_{i \in \omega} h(i).
+  \end{equation*}
+
+  Then $C^* = C_*$.
+\end{exthm}
+\begin{proof}
+  \begin{itemize}
+    \item ($C^* \subseteq C_*$)
+
+      We will first show that $f[C_*] \subseteq C_*$. Let $y \in f[C_*]$. Then there is an $x \in C_*$ such that $f(x) = y$. By $x \in C_*$, this means there is an $n \in \omega$ such that $x \in h(n)$. So $y = f(h(n))$ for some $n \in \omega$. So then $y \in h(n^+)$. Hence, $y \in C_*$.
+
+      Let $C = \Set*{X \st A \subseteq X \subseteq B \ \&\ f[X] \subseteq X}$. Since $A \subseteq C_* \subseteq B$, and above we showed that $f[C_*] \subseteq C_*$, we have $C_* \in C$. We then have to show that for every set $D \in C$, that $C_* \subseteq D$. TODO
+
+    \item ($C_* \subseteq C^*$) TODO
+  \end{itemize}
+\end{proof}
+
+\subsubsection{Arithmetic}
+\begin{exthm}[13]
+  Let $m$ and $n$ be natural numbers such that $m \cdot n = 0$. Then either $m = 0$ or $n = 0$.
+\end{exthm}
+\begin{proof}
+  Let $m$ be fixed and let $S = \Set*{n \in \omega \st m \cdot n \Rightarrow m = 0 \text{ or } n = 0} = \Set*{p \in \omega \st m \cdot p^+ = 0 \Rightarrow m = 0}$.
+
+  $0 \in S$, as $m \cdot 0^+ = 0$ implies $m = 0$..
+
+  Suppose $k \in S$. We want to show that if $m \neq 0$ then $m \cdot k^{++} \neq 0$. To this end, suppose $m \neq 0$. Then $m \cdot k^{++} = m \cdot k^+ +m \neq 0$. Thus $k^+ \in S$. Therefore $S$ is inductive.
+\end{proof}
+
+\begin{exthm}[15]
+  Addition is associative, $(m + n) + p = m + (n + p)$.
+\end{exthm}
+\begin{proof}
+  Let $A = \Set*{p \in \omega \st (m + n) + p = m + (n + p)}$. We will show $A$ is inductive.
+
+  Since $(m + n) + 0 = m + n = 0 + (m + n)$, $0 \in A$.
+
+  Now suppose $k \in A$. Then
+  \begin{align*}
+    (m + n) + k^+ &= ((m + n) + k)^+\\
+                  &= (m + (n + k))^+ &\text{As $k \in A$}\\
+                  &= m + (n + k)^+\\
+                  &= m + (n + k^+)
+  \end{align*}
+  So $A$ is inductive.
+\end{proof}
 \end{document}
