@@ -63,9 +63,11 @@
 \maketitle
 
 \section{Introduction and Motivation}
-There are my notes to the book. It also contains extra theorems to ``obvious'' facts.
+There are my notes to the book. It also contains extra theorems to ``obvious''
+facts.
 
-I have started reading Enderton a few times previously, like 2020, when I started writing this!
+I have started reading Enderton a few times previously, like 2020, when I
+started writing this!
 
 \section{Axioms}
 \begin{axiom}[Extensionality Axiom]\label{extensionality}
@@ -85,13 +87,15 @@ This can be rewritten as
 \[
   \exists B \ \forall x (x \in B\ \iff\ x \neq x),
 \]
-\begin{axiom}[Pairing Axiom] For any sets $u$ and $v$, there is a set having members of just $u$ and $v$:
+\begin{axiom}[Pairing Axiom]
+  For any sets $u$ and $v$, there is a set having members of just $u$ and $v$:
   \[
     \forall u\ \forall v\ \exists B\ \forall x(x \in B \Leftrightarrow x = u \text{ or } x = v).
   \]
 \end{axiom}
 
-\begin{axiom}[Power Set Axiom] For any set $a$, there is a set whose members are exactly the subsets of $a$:
+\begin{axiom}[Power Set Axiom]
+  For any set $a$, there is a set whose members are exactly the subsets of $a$:
   \[
     \forall a\ \exists B\ \forall x(x \in B \Leftrightarrow x \subseteq a).
   \]
@@ -105,7 +109,8 @@ This can be rewritten as
 \end{axiom}
 
 \begin{axiom}[Union Axiom]
-  For any set $A$ there exists a set $B$ whose elements are exactly the members of the members of $A$:
+  For any set $A$ there exists a set $B$ whose elements are exactly the members
+  of the members of $A$:
   \[
     \forall x(x \in B \Leftrightarrow (\exists b \in A) x \in b).
   \]
@@ -117,11 +122,15 @@ This can be rewritten as
 
 \section{Definitions}
 \begin{defn}
-  The concepts of ``set'' and ``member'' are \textit{primitive notions} which remain undefined.
+  The concepts of ``set'' and ``member'' are \textit{primitive notions} which
+  remain undefined.
 \end{defn}
 
 \begin{defn}
-  \textit{Logical consequences} or \textit{theorems} are derived sentences of the list of axioms. A sentence $\sigma$ is a \textit{logical consequence} of the axioms if any assignment of meaning to the undefined notions of set and member making the axioms true also make $\sigma$ true.
+  \textit{Logical consequences} or \textit{theorems} are derived sentences of
+  the list of axioms. A sentence $\sigma$ is a \textit{logical consequence} of
+  the axioms if any assignment of meaning to the undefined notions of set and
+  member making the axioms true also make $\sigma$ true.
 \end{defn}
 
 \begin{defn}\label{emptyset}
@@ -129,15 +138,18 @@ This can be rewritten as
 \end{defn}
 
 \begin{defn}
-  For any sets $u$ and $v$, the \textit{pair set} $\{u,\ v\}$ is the set whose members are only $u$ and $v$.
+  For any sets $u$ and $v$, the \textit{pair set} $\{u,\ v\}$ is the set whose
+  members are only $u$ and $v$.
 \end{defn}
 
 \begin{defn}
-  For any set $a$ and $b$, the \textit{union} $a \cup b$ is the set whose members are those sets belonging to either $a$ or $b$.
+  For any set $a$ and $b$, the \textit{union} $a \cup b$ is the set whose
+  members are those sets belonging to either $a$ or $b$.
 \end{defn}
 
 \begin{defn}
-  For any set $a$, the \textit{power set} $\powerset a$ is the set whose members are exactly the subsets of $a$.
+  For any set $a$, the \textit{power set} $\powerset a$ is the set whose
+  members are exactly the subsets of $a$.
 \end{defn}
 
 \begin{defn}
@@ -163,7 +175,8 @@ This can be rewritten as
 \end{defn}
 
 \begin{defn}
-  For any sets $A$ and $B$, the \textit{relative complement $A-B$ of $B$ in $A$}:
+  For any sets $A$ and $B$, the
+  \textit{relative complement $A-B$ of $B$ in $A$}:
   \[
     A - B = \Set*{x \in A \st x \not\in B}.
   \]
@@ -198,15 +211,18 @@ This can be rewritten as
 \end{defn}
 
 \begin{defn}
-  $n$-tuples are defined as follows. For triples, $\ang{x,y,z} = \ang{\ang{x,y},z }$ and so on. The 1-tuple is defined $\ang{x} = x$.
+  $n$-tuples are defined as follows. For triples, $\ang{x,y,z} =
+  \ang{\ang{x,y},z }$ and so on. The 1-tuple is defined $\ang{x} = x$.
 \end{defn}
 
 \begin{defn}
-  A \textit{n-ary relation on $A$} is defined to be a set of ordered $n$-tuples with all components in $A$.
+  A \textit{n-ary relation on $A$} is defined to be a set of ordered $n$-tuples
+  with all components in $A$.
 \end{defn}
 
 \begin{defn}
-  A \textit{function} is a relation $F$ such that for each $x$ in $\dom F$ there is only one $y$ such that $xFy$.
+  A \textit{function} is a relation $F$ such that for each $x$ in $\dom F$
+  there is only one $y$ such that $xFy$.
 \end{defn}
 
 \begin{defn}
@@ -217,11 +233,13 @@ This can be rewritten as
 \end{defn}
 
 \begin{defn}
-  For a function $F$ and a point $x$ in $\dom F$, the unique $y$ such that $xFy$ is called the \textit{value of $F$ at $x$}, denoted by $F(x)$.
+  For a function $F$ and a point $x$ in $\dom F$, the unique $y$ such that
+  $xFy$ is called the \textit{value of $F$ at $x$}, denoted by $F(x)$.
 \end{defn}
 
 \begin{defn}
-  A set $R$ is \textit{single-rooted} iff for each $y \in \ran R$ there is only one $x$ such that $xRy$.
+  A set $R$ is \textit{single-rooted} iff for each $y \in \ran R$ there is only
+  one $x$ such that $xRy$.
 \end{defn}
 
 \begin{defn}
@@ -255,7 +273,8 @@ This can be rewritten as
 \end{defn}
 
 \begin{defn}
-  $R$ is an \textit{equivalence relation on $A$} iff $R$ is a binary relation on $A$ that is reflexive on $A$, symmetric, and transitive.
+  $R$ is an \textit{equivalence relation on $A$} iff $R$ is a binary relation
+  on $A$ that is reflexive on $A$, symmetric, and transitive.
 \end{defn}
 
 \begin{defn}
@@ -273,7 +292,8 @@ This can be rewritten as
 \end{defn}
 
 \begin{defn}
-  A set $A$ is \textit{inductive} iff $\varnothing \in A$ and it is closed under successor, ie for every $a \in A$, $a^+ \in A$.
+  A set $A$ is \textit{inductive} iff $\varnothing \in A$ and it is closed
+  under successor, ie for every $a \in A$, $a^+ \in A$.
 \end{defn}
 
 \begin{defn}
@@ -282,35 +302,42 @@ This can be rewritten as
 
 \section{Theorems}
 \thmproof{}{There cannot be two different sets, each of which has no members.}
-{Let $A$ and $B$ be sets, each of which has no members. Then exactly the same things belong to $A$ as to $B$. By the Extensionality Axiom, $A = B$.
-}
+{Let $A$ and $B$ be sets, each of which has no members. Then exactly the same
+things belong to $A$ as to $B$. By the Extensionality Axiom, $A = B$.  }
 
 \begin{thm}\label{identity}
   Let $A$ be a set. Then $A = A$.
 \end{thm}
 \begin{proof}
-  Since for all $x$, $x \in A$ if and only if $x \in A$, by the Extensionality Axiom, we have $A = A$.
+  Since for all $x$, $x \in A$ if and only if $x \in A$, by the Extensionality
+  Axiom, we have $A = A$.
 \end{proof}
 
 \begin{thm}
   $\varnothing = \Set*{x \st x \neq x}$.
 \end{thm}
 \begin{proof}
-  Let $y$ be a set, $\varnothing' = \{x\ |\ x \neq x\}$ and suppose $y \in \varnothing'$. Then $y \neq y$. But by Theorem~\ref{identity}, $y = y$, a contradiction. Therefore, the premise $y \in \varnothing'$ is false. Hence, $\varnothing'$ has no members, by definition, we have $\varnothing' = \varnothing$.
+  Let $y$ be a set, $\varnothing' = \{x\ |\ x \neq x\}$ and suppose $y \in
+  \varnothing'$. Then $y \neq y$. But by Theorem~\ref{identity}, $y = y$, a
+  contradiction. Therefore, the premise $y \in \varnothing'$ is false. Hence,
+  $\varnothing'$ has no members, by definition, we have $\varnothing' =
+  \varnothing$.
 \end{proof}
 
 \begin{thm}\label{multi}
   Let $x$ be a set. Then $\{x\} = \{x,\ x\}$.
 \end{thm}
 \begin{proof}
-  This follows from the Extensionality Axiom, since for any set $y$, $y \in \{x\} \Leftrightarrow y \in \{x,\ x\}$.
+  This follows from the Extensionality Axiom, since for any set $y$, $y \in
+  \{x\} \Leftrightarrow y \in \{x,\ x\}$.
 \end{proof}
 
 \begin{thm}
   Let $x$ be a set. Then the set $\{x\}$ exists.
 \end{thm}
 \begin{proof}
-  By the Pairing Axiom, there exists a set having members $x$, or $\{x,\ x\}$. By Theorem~\ref{multi}, $\{x,\ x\} = \{x\}$.
+  By the Pairing Axiom, there exists a set having members $x$, or $\{x,\ x\}$.
+  By Theorem~\ref{multi}, $\{x,\ x\} = \{x\}$.
 \end{proof}
 
 \begin{thm}
@@ -330,7 +357,10 @@ This can be rewritten as
 }
 
 \thmproof{}{$\cup \varnothing = \varnothing$.}
-{We have $\cup \varnothing = \{x\ |\ \text{$x$ belongs to some member of $\varnothing$}\}$. But by definition, $\varnothing$ has no members, so there is no $x$ that can be a member of $\varnothing$. Hence, $\cup \varnothing = \varnothing$.
+{We have $\cup \varnothing = \{x\ |\ \text{$x$ belongs to some member of
+  $\varnothing$}\}$. But by definition, $\varnothing$ has no members, so there
+  is no $x$ that can be a member of $\varnothing$. Hence, $\cup \varnothing =
+  \varnothing$.
 }
 
 \thmproof{}{Whenever $A \subseteq B$, then $\cap B \subseteq \cap A$.}
@@ -338,28 +368,37 @@ This can be rewritten as
 }
 
 \thmproof{}{$\powerset \varnothing = \{\varnothing\}$}
-{The power set of $\varnothing$ is the set of all subsets of $\varnothing$. Since $\varnothing$ is the only subset of $\varnothing$, $\powerset \varnothing = \{\varnothing \}$.
+{The power set of $\varnothing$ is the set of all subsets of $\varnothing$.
+  Since $\varnothing$ is the only subset of $\varnothing$, $\powerset
+  \varnothing = \{\varnothing \}$.
 }
 
 \begin{thm}\label{powersetMember}
   If $b \subseteq A$, then $b \in \powerset A$.
 \end{thm}
 \begin{proof}
-  Since the power set of $A$ is the set of all subsets of $A$, and $b$ is a subset of $A$, $b \in \powerset A$.
+  Since the power set of $A$ is the set of all subsets of $A$, and $b$ is a
+  subset of $A$, $b \in \powerset A$.
 \end{proof}
 
 \begin{thm}
   If $A \subseteq B$ then $\cap B \subseteq \cap A$.
 \end{thm}
 \begin{proof}
-  Suppose not. Suppose there exists a $x \in \cap B$ but $x \not\in \cap A$. This means that there is a $a \in A$ such that $x \not\in a$. Since $A \subseteq B$, $a \in B$. But $x$ is a member of \textit{all} members of $B$, a contradiction.
+  Suppose not. Suppose there exists a $x \in \cap B$ but $x \not\in \cap A$.
+  This means that there is a $a \in A$ such that $x \not\in a$. Since $A
+  \subseteq B$, $a \in B$. But $x$ is a member of \textit{all} members of $B$,
+  a contradiction.
 \end{proof}
 
 \begin{thm}
   $\Set{A \cup X \st X \in \mathscr{B}}$ is a set.
 \end{thm}
 \begin{proof}
-  Let $\mathscr{D} = \Set{A \cup X \st X \in \mathscr{B}}$. Let $A \cup X$ be an arbitrary member of $\mathscr{D}$. Since $X \in \mathscr{B}$, $X \subseteq \bigcup \mathscr{B}$, and so $A \cup X \subseteq A \cup \bigcup \mathscr{B}$. Hence $A \cup X \in \powerset\left(A \cup \bigcup  \mathscr{B}\right)$.
+  Let $\mathscr{D} = \Set{A \cup X \st X \in \mathscr{B}}$. Let $A \cup X$ be
+  an arbitrary member of $\mathscr{D}$. Since $X \in \mathscr{B}$, $X \subseteq
+  \bigcup \mathscr{B}$, and so $A \cup X \subseteq A \cup \bigcup \mathscr{B}$.
+  Hence $A \cup X \in \powerset\left(A \cup \bigcup  \mathscr{B}\right)$.
 
   With a subset axiom,
   \[
@@ -371,20 +410,27 @@ This can be rewritten as
   $\Set*{\powerset X \st X \in \mathscr{A}}$ is a set.
 \end{thm}
 \begin{proof}
-  Since $X \in \mathscr{A}$, $X \subseteq \bigcup  \mathscr{A}$. And so $\powerset X \subseteq \powerset \bigcup  \mathscr{A}$. It follows that $\powerset X \in \powerset \powerset \bigcup  \mathscr{A}$. A subset axiom produces this set is
+  Since $X \in \mathscr{A}$, $X \subseteq \bigcup  \mathscr{A}$. And so
+  $\powerset X \subseteq \powerset \bigcup  \mathscr{A}$. It follows that
+  $\powerset X \in \powerset \powerset \bigcup  \mathscr{A}$. A subset axiom
+  produces this set is
   \[
-    \Set*{t \in \powerset \powerset \bigcup  \mathscr{A} \st t = \powerset X\ \text{for some $X$ in $\mathscr{A}$}}.
+    \Set*{t \in \powerset \powerset \bigcup  \mathscr{A} \st t = \powerset X\
+    \text{for some $X$ in $\mathscr{A}$}}.
   \]
 \end{proof}
 
 \begin{thmproof}{}
-  {For nonempty set $A$, $^{A}\varnothing = \varnothing$.}
-  {Let $f \in\, ^{A} \varnothing$ and suppose $\ang{x, y} \in f$, then $x \in A$ and $y \in \varnothing$, which is impossible. Therefore, $^{A} \varnothing = \varnothing$.}
+  {For nonempty set $A$, $^{A}\varnothing = \varnothing$.} {Let $f \in\, ^{A}
+  \varnothing$ and suppose $\ang{x, y} \in f$, then $x \in A$ and $y \in
+\varnothing$, which is impossible. Therefore, $^{A} \varnothing =
+\varnothing$.}
 \end{thmproof}
 
 \begin{thmproof}{}
   {For any set $A$, $^{\varnothing} A = \{\varnothing\}$.}
-  {Since $\varnothing : \varnothing \rightarrow A$ and $\varnothing$ is the only function with an empty domain.}
+  {Since $\varnothing : \varnothing \rightarrow A$ and $\varnothing$ is the
+  only function with an empty domain.}
 \end{thmproof}
 
 \begin{thm}
@@ -398,9 +444,14 @@ This can be rewritten as
 \end{thm}
 \begin{proof}
   \begin{itemize}
-    \item ($1 \rightarrow 2$) Suppose $x \in \bigcup A$. Then there is an $a \in A$, such that $x \in a$. By (1), $x \in A$. Therefore $\bigcup A \subseteq A$.
+    \item ($1 \rightarrow 2$) Suppose $x \in \bigcup A$. Then there is an $a
+      \in A$, such that $x \in a$. By (1), $x \in A$. Therefore $\bigcup A
+      \subseteq A$.
 
-    \item ($2 \rightarrow 3$) Let $a \in A$. If $a = \varnothing$, then $a \subseteq A$. Suppose then $a \neq \varnothing$, then there is an $x \in a$. Since $x \in a$ implies $x \in \bigcup A$, by (2), $x \in A$. Therefore $a \subseteq A$.
+    \item ($2 \rightarrow 3$) Let $a \in A$. If $a = \varnothing$, then $a
+      \subseteq A$. Suppose then $a \neq \varnothing$, then there is an $x \in
+      a$. Since $x \in a$ implies $x \in \bigcup A$, by (2), $x \in A$.
+      Therefore $a \subseteq A$.
 
     \item ($3 \rightarrow 4$) Let $a \in A$. By (3), $a \subseteq A$, so $a \in \powerset(A)$.
 
@@ -416,11 +467,13 @@ This can be rewritten as
   If $B \subseteq C$ then $\powerset B \subseteq \powerset C$.
 \end{exthm}
 \begin{proof}
-  Let $A \in \powerset B$. Then $A \subseteq B$. Since $B \subseteq C$, by transitivity of $\subseteq$, we have $A \subseteq C$. So $A \in \powerset C$.
+  Let $A \in \powerset B$. Then $A \subseteq B$. Since $B \subseteq C$, by
+  transitivity of $\subseteq$, we have $A \subseteq C$. So $A \in \powerset C$.
 \end{proof}
 
 \begin{eg}
-  Define the rank of a set $c$ to be the least $\alpha$ such that $c \subseteq V_\alpha$. Then the rank of $\{\{\varnothing\}\}$ is 2.
+  Define the rank of a set $c$ to be the least $\alpha$ such that $c \subseteq
+  V_\alpha$. Then the rank of $\{\{\varnothing\}\}$ is 2.
 \end{eg}
 
 \subsection{Axioms and Operations}
@@ -432,20 +485,27 @@ This can be rewritten as
 \end{eg}
 
 \begin{exthm}[3]\label{memberUnion}
-  If $b \in A$, then $b \subseteq \cup A$. (Or: Every member of a set $A$ is a subset of $\cup A$.)
+  If $b \in A$, then $b \subseteq \cup A$. (Or: Every member of a set $A$ is a
+  subset of $\cup A$.)
 \end{exthm}
 \begin{proof}
-  If $b = \varnothing$, then as the empty set if a subset of every set, we have $\varnothing \subseteq \cup A$.  Suppose $b$ is non-empty and that $a \in b$. Since $b \in A$, $a$ is a member of a member of $A$, so $a \in \cup A$.
+  If $b = \varnothing$, then as the empty set if a subset of every set, we have
+  $\varnothing \subseteq \cup A$.  Suppose $b$ is non-empty and that $a \in b$.
+  Since $b \in A$, $a$ is a member of a member of $A$, so $a \in \cup A$.
 \end{proof}
 \begin{remark}
-  If $A$ is a set, $b \subseteq \cup A$ does not imply $b \in A$. For example, $a = \{1,2\}$ and $B = \aSet{\aSet{1}, \aSet{2}}$.
+  If $A$ is a set, $b \subseteq \cup A$ does not imply $b \in A$. For example,
+  $a = \{1,2\}$ and $B = \aSet{\aSet{1}, \aSet{2}}$.
 \end{remark}
 
 \begin{exthm}[4]
   If $A \subseteq B$, then $\cup A \subseteq \cup B$
 \end{exthm}
 \begin{proof}
-  If $A$ is the empty set, this is clearly true. Suppose $A$ is non-empty and let $x \in \cup A$. Then there exists a $a \in A$ such that $x \in a$. But since $A \subseteq B$, $a \in B$, so $x$ is a member of a member of $B$. Therefore $x \in \cup B$.
+  If $A$ is the empty set, this is clearly true. Suppose $A$ is non-empty and
+  let $x \in \cup A$. Then there exists a $a \in A$ such that $x \in a$. But
+  since $A \subseteq B$, $a \in B$, so $x$ is a member of a member of $B$.
+  Therefore $x \in \cup B$.
 \end{proof}
 
 \begin{exthm}[Q 6a]
@@ -484,10 +544,11 @@ This can be rewritten as
 \begin{proof}
   Let $x$ be an arbitrary member of $\powerset A \cap \powerset B$. Then
   \begin{align*}
-    x \in \powerset A \text{ and } x \in \powerset B &\Leftrightarrow
+    x \in \powerset A \text{ and } x \in \powerset B
+    &\Leftrightarrow
     x \subseteq A \text { and } x \subseteq B\\
-                                                     &\Leftrightarrow x \subseteq A \cap B\\
-                                                     &\iff x \in \powerset (A \cap B)
+    &\Leftrightarrow x \subseteq A \cap B\\
+    &\iff x \in \powerset (A \cap B)
   \end{align*}
 \end{proof}
 
@@ -495,21 +556,26 @@ This can be rewritten as
   For any sets $A$ and $B$, $\powerset A \cup \powerset B \subseteq \powerset(A \cup B)$.
 \end{exthm}
 \begin{proof}
-  Let $x \in \powerset A \cup \powerset B$. So $x \in \powerset A$ or $x \in \powerset B$. Suppose $x \in \powerset A$. Since $A \subseteq A \cup B$, $x \in \powerset (A \cup B)$. The case $x \in \powerset B$ is similar.
+  Let $x \in \powerset A \cup \powerset B$. So $x \in \powerset A$ or $x \in
+  \powerset B$. Suppose $x \in \powerset A$. Since $A \subseteq A \cup B$, $x
+  \in \powerset (A \cup B)$. The case $x \in \powerset B$ is similar.
 \end{proof}
 
 \begin{exthm}[7b]
   If $A \subseteq B$, then $\powerset A \cup \powerset B = \powerset(A \cup B)$.
 \end{exthm}
 \begin{proof}
-  Since $A \subseteq B$, $\powerset A \subseteq \powerset B$, and so $\powerset A \cup \powerset B = \powerset B = \powerset (A \cup B)$.
+  Since $A \subseteq B$, $\powerset A \subseteq \powerset B$, and so $\powerset
+  A \cup \powerset B = \powerset B = \powerset (A \cup B)$.
 \end{proof}
 
 \begin{exthm}[8]
   There is no set to which every singleton belongs.
 \end{exthm}
 \begin{proof}
-  Let $A$ be a set to which every singleton belongs. Let $b$ be an arbitrary set. Then $b \in \cup A$ as $\{b\}$ is a singleton and so is in $A$. Hence $\cup A$ contains every set.
+  Let $A$ be a set to which every singleton belongs. Let $b$ be an arbitrary
+  set. Then $b \in \cup A$ as $\{b\}$ is a singleton and so is in $A$. Hence
+  $\cup A$ contains every set.
 \end{proof}
 
 \begin{eg}[9]
@@ -520,7 +586,10 @@ This can be rewritten as
   If $a \in B$, then $\powerset a \in \powerset \powerset \cup B$.
 \end{exthm}
 \begin{proof}
-  This is equivalent to showing $\powerset a \subseteq \powerset \cup B$. Let $x \in \powerset a$, so $x \subseteq a$. Since $a \in B$, $a \subseteq \cup B$ (by Exercises~\ref{memberUnion}). So $x \subseteq \cup B$ or $x \in \powerset \cup B$.
+  This is equivalent to showing $\powerset a \subseteq \powerset \cup B$. Let
+  $x \in \powerset a$, so $x \subseteq a$. Since $a \in B$, $a \subseteq \cup
+  B$ (by Exercises~\ref{memberUnion}). So $x \subseteq \cup B$ or $x \in
+  \powerset \cup B$.
 \end{proof}
 
 \subsubsection{Algebra of Sets}
@@ -528,7 +597,8 @@ This can be rewritten as
   If $A \subseteq B$, then $C - B \subseteq C - A$.
 \end{exthm}
 \begin{proof}
-  Let $x \in C - B$. Then $x \in C$ but $x \not\in B$. Since $A \subseteq B$, if $x \not\in B$, then $x \not\in A$. So $x \in C - A$.
+  Let $x \in C - B$. Then $x \in C$ but $x \not\in B$. Since $A \subseteq B$,
+  if $x \not\in B$, then $x \not\in A$. So $x \in C - A$.
 \end{proof}
 
 \begin{eg}[14]
@@ -541,7 +611,8 @@ This can be rewritten as
 \begin{proof}
   Let $x \in A \cap (B + C)$. We consider two cases.
   \begin{itemize}
-    \item $x \in A \cap B$ but $x \not\in C$. Then $x \not\in A \cap C$, so $x \in (A \cap B) + (A \cap C)$.
+    \item $x \in A \cap B$ but $x \not\in C$. Then $x \not\in A \cap C$, so $x
+      \in (A \cap B) + (A \cap C)$.
     \item The case $x \in A \cap C$ but $x \not\in B$ is similar.
   \end{itemize}
 \end{proof}
@@ -569,7 +640,10 @@ This can be rewritten as
   \begin{itemize}
     \item (b) $\Rightarrow$ (a)
 
-      Suppose $A - B = \varnothing$. Then there does not exist a $x$ such that $x \in A$ and $x \not\in B$. Or for all $x$, $x \not\in A$ or $x \in B$, which means for all $x$, $x \in A$ implies $x \in B$. Hence $A \subseteq B$.
+      Suppose $A - B = \varnothing$. Then there does not exist a $x$ such that
+      $x \in A$ and $x \not\in B$. Or for all $x$, $x \not\in A$ or $x \in B$,
+      which means for all $x$, $x \in A$ implies $x \in B$. Hence $A \subseteq
+      B$.
     \item (a) $\Rightarrow$ (c)
 
       Let $x \in A \cup B$, since $A \subseteq B$, $x \in B$.
@@ -582,16 +656,22 @@ This can be rewritten as
 
       Suppose $A \cap B = A$, then
       \[
-        A - B = (A \cap B) - B = \Set*{x \st x \in A \cap B\ \text{and}\ x \not\in B} = \varnothing.
+        A - B = (A \cap B) - B = \Set*{x \st x \in A \cap B\ \text{and}\ x
+        \not\in B} = \varnothing.
       \]
 
   \end{itemize}
 \end{proof}
 
 \begin{eg}[18]
-  Assume that $A$ and $B$ are subsets of $S$. Then there are 15 different sets that can be made from these three by use of the binary operations $\cup$, $\cap$, and $-$.
+  Assume that $A$ and $B$ are subsets of $S$. Then there are 15 different sets
+  that can be made from these three by use of the binary operations $\cup$,
+  $\cap$, and $-$.
 
-  This can be seen by splitting the sets in 4 different sets, $S - (A \cup B)$, $A - B$, $B - A$, and $A \cap B$. For each of these sets, we can either include or exclude it. Excluding not selecting any, we have $2^4 - 1 = 15$ possible sets. These are,
+  This can be seen by splitting the sets in 4 different sets, $S - (A \cup B)$,
+  $A - B$, $B - A$, and $A \cap B$. For each of these sets, we can either
+  include or exclude it. Excluding not selecting any, we have $2^4 - 1 = 15$
+  possible sets. These are,
 
   \begin{enumerate}
     \item $S - (A \cup B)$
@@ -613,19 +693,23 @@ This can be rewritten as
 \end{eg}
 
 \begin{eg}[19]
-  Since $\varnothing \in \powerset (A - B)$ and $\varnothing \not\in \powerset A - \powerset B$, $\powerset(A - B) \neq \powerset A - \powerset B$.
+  Since $\varnothing \in \powerset (A - B)$ and $\varnothing \not\in \powerset
+  A - \powerset B$, $\powerset(A - B) \neq \powerset A - \powerset B$.
 \end{eg}
 
 \begin{exthm}[20]
-  Let $A, B$ and $C$ be sets such that $A \cup B = A \cup C$ and $A \cap B = A \cap C$. Then $B = C$.
+  Let $A, B$ and $C$ be sets such that $A \cup B = A \cup C$ and $A \cap B = A
+  \cap C$. Then $B = C$.
 \end{exthm}
 \begin{proof}
   Let $x \in B$. We consider two cases,
   \begin{itemize}
     \item Suppose $x \in A$. Then $x \in A \cap B = A \cap C$. So $x \in C$.
-    \item Suppose $x \not\in A$. Then $x \not\in A \cap B = A \cap C$. But since $x \in A \cup C$, we have $x \in C - A$ and so $x \in C$.
+    \item Suppose $x \not\in A$. Then $x \not\in A \cap B = A \cap C$. But
+      since $x \in A \cup C$, we have $x \in C - A$ and so $x \in C$.
   \end{itemize}
-  This shows $B \subseteq C$. The same argument starting with $x \in C$ shows that $C \subseteq B$.
+  This shows $B \subseteq C$. The same argument starting with $x \in C$ shows
+  that $C \subseteq B$.
 \end{proof}
 
 \begin{exthm}[21]
@@ -641,25 +725,29 @@ This can be rewritten as
 \end{proof}
 
 \begin{exthm}[23]
-  If $\mathscr{B}$ is nonempty, then $A \cup \bigcup \mathscr{B} = \bigcap \Set*{A \cup X \st X \in \mathscr{B}}$.
+  If $\mathscr{B}$ is nonempty, then $A \cup \bigcup \mathscr{B} = \bigcap
+  \Set*{A \cup X \st X \in \mathscr{B}}$.
 \end{exthm}
 \begin{proof}
   \begin{align*}
-    x \in A \cup \bigcap \mathscr{B} &\iff x \in A \text{ or } (\forall X \in \mathscr{B}) t \in X\\
-                                     &\iff (\forall X \in \mathscr{B}) (t \in A \text{ or } t \in X)\\
-                                     &\iff t \in \bigcap\Set*{A \cup X \st t \in \mathscr{B}}.
+    x \in A \cup \bigcap \mathscr{B}
+    &\iff x \in A \text{ or } (\forall X \in \mathscr{B}) t \in X\\
+    &\iff (\forall X \in \mathscr{B}) (t \in A \text{ or } t \in X)\\
+    &\iff t \in \bigcap\Set*{A \cup X \st t \in \mathscr{B}}.
   \end{align*}
 \end{proof}
 
 \begin{exthm}[24a]
-  If $A$ is nonempty, then $\powerset \bigcap A = \bigcap \Set{\powerset X \st X \in A}$.
+  If $A$ is nonempty, then
+  $\powerset \bigcap A = \bigcap \Set{\powerset X \st X \in A}$.
 \end{exthm}
 \begin{proof}
   \begin{align*}
-    t \in \powerset \bigcap \mathscr{A} &\iff t \subseteq \bigcap \mathscr{A}\\
-                                        &\iff (\forall X \in \mathscr{A}) (t \subseteq X)\\
-                                        &\iff (\forall X \in \mathscr{A}) (t \in \powerset X)\\
-                                        &\iff t \in \bigcap \Set{\powerset X | X \in \mathscr{A}}.
+    t \in \powerset \bigcap \mathscr{A}
+    &\iff t \subseteq \bigcap \mathscr{A}\\
+    &\iff (\forall X \in \mathscr{A}) (t \subseteq X)\\
+    &\iff (\forall X \in \mathscr{A}) (t \in \powerset X)\\
+    &\iff t \in \bigcap \Set{\powerset X | X \in \mathscr{A}}.
   \end{align*}
 \end{proof}
 
@@ -667,7 +755,11 @@ This can be rewritten as
   $\bigcup \Set{\powerset X \st X \in \mathscr{A}} \subseteq \powerset \bigcup \mathscr{A}$.
 \end{exthm}
 \begin{proof}
-  Let $t \in \bigcup \Set*{\powerset X \st X \in \mathscr{A}}$. Then there is a $X \in \mathscr{A}$ such that $t \in \powerset X$. Since $t \in \powerset X$ then $t \subseteq X$, and since $X \in \mathscr{A}$, $X \subseteq \bigcup \mathscr{A}$. Putting these together, we have $t \subseteq X \subseteq \bigcup \mathscr{A}$. So $t \in \powerset \bigcup \mathscr{A}$.
+  Let $t \in \bigcup \Set*{\powerset X \st X \in \mathscr{A}}$. Then there is a
+  $X \in \mathscr{A}$ such that $t \in \powerset X$. Since $t \in \powerset X$
+  then $t \subseteq X$, and since $X \in \mathscr{A}$, $X \subseteq \bigcup
+  \mathscr{A}$. Putting these together, we have $t \subseteq X \subseteq
+  \bigcup \mathscr{A}$. So $t \in \powerset \bigcup \mathscr{A}$.
 \end{proof}
 \begin{remark}
   Equality never holds.
@@ -691,10 +783,11 @@ This can be rewritten as
 \subsection{Relations and Functions}
 \begin{eg}[1]
   \begin{align*}
-    \ang{\varnothing, \varnothing, \aSet{\varnothing}}^* &=
+    \ang{\varnothing, \varnothing, \aSet{\varnothing}}^*
+    &=
     \aSet{\aSet{\varnothing}, \aSet{\varnothing, \varnothing}, \aSet{\varnothing, \varnothing, \aSet{\varnothing}}}\\
-                                                         &=  \aSet{\aSet{\varnothing}, \aSet{\varnothing, \aSet{\varnothing}}, \aSet{\varnothing, \aSet{\varnothing}, \varnothing}}\\
-                                                         &= \ang{\varnothing, \aSet{\varnothing}, \varnothing}^*
+    &=  \aSet{\aSet{\varnothing}, \aSet{\varnothing, \aSet{\varnothing}}, \aSet{\varnothing, \aSet{\varnothing}, \varnothing}}\\
+    &= \ang{\varnothing, \aSet{\varnothing}, \varnothing}^*
   \end{align*}
 \end{eg}
 \begin{exthm}[4]
@@ -731,8 +824,13 @@ This can be rewritten as
 \begin{exthm}[6]
   A set $A$ is a relation if and only if $A \subseteq \dom{A} \times \ran{A}$.
   \begin{itemize}
-    \item ($\Rightarrow$) Suppose $A$ is a relation. Let $\ang{x,y} \in A$. Then $x \in \dom{A}$, as $\ang{x,y} \in A$, and similarly, $y \in \ran{A}$. So $\ang{x,y} \in \dom{A} \times \ran{A}$.
-    \item ($\Leftarrow$) Suppose $A \subseteq \dom{A} \times \ran{A}$. Suppose $t \in A$ an $t$ is not an ordered pair. But $t \in A$ so $t \in \dom{A} \times \ran{A}$. Therefore $t$ is an element of a set of ordered pairs.
+    \item ($\Rightarrow$) Suppose $A$ is a relation. Let $\ang{x,y} \in A$.
+      Then $x \in \dom{A}$, as $\ang{x,y} \in A$, and similarly, $y \in
+      \ran{A}$. So $\ang{x,y} \in \dom{A} \times \ran{A}$.
+
+    \item ($\Leftarrow$) Suppose $A \subseteq \dom{A} \times \ran{A}$. Suppose
+      $t \in A$ an $t$ is not an ordered pair. But $t \in A$ so $t \in \dom{A}
+      \times \ran{A}$. Therefore $t$ is an element of a set of ordered pairs.
   \end{itemize}
 \end{exthm}
 
@@ -740,9 +838,12 @@ This can be rewritten as
   If $R$ is a relation, then $\fld{R} = \bigcup\bigcup R$.
 \end{exthm}
 \begin{proof}
-  Let $x \in \dom{R}$. Since $\dom{R} = \Set*{x \in \bigcup\bigcup R \st \exists y \ang{x,y} \in R}$, $x \in \bigcup\bigcup R$.
+  Let $x \in \dom{R}$. Since $\dom{R} = \Set*{x \in \bigcup\bigcup R \st
+  \exists y \ang{x,y} \in R}$, $x \in \bigcup\bigcup R$.
 
-  Let $x \in \bigcup\bigcup R$. Since $R$ a relation, $R = \Set{\ang{x, y} \st \ang{x,y} \in R}$. So $\bigcup \bigcup R = \Set*{u \st \exists \ang{x,y} \in R \text{ and } u = x \text{ or } u = y}$. Hence $x \in \dom{R} \cup \ran{R}$.
+  Let $x \in \bigcup\bigcup R$. Since $R$ a relation, $R = \Set{\ang{x, y} \st
+  \ang{x,y} \in R}$. So $\bigcup \bigcup R = \Set*{u \st \exists \ang{x,y} \in
+R \text{ and } u = x \text{ or } u = y}$. Hence $x \in \dom{R} \cup \ran{R}$.
 \end{proof}
 
 \begin{exthm}[8]
@@ -755,16 +856,18 @@ This can be rewritten as
 \begin{proof}
   We have,
   \begin{align*}
-    \dom{\bigcup \mathscr{A}} &= \Set{x \st \exists y\, \ang{x, y} \in \bigcup \mathscr{A}}\\
-                              &= \Set*{x \st \exists y\, \exists R \in \mathscr{A}\ \ang{x,y} \in R}\\
-                              &= \Set*{x \st (\exists R \in \mathscr{A})\ x \in \dom{R}}\\
-                              &= \bigcup \Set*{\dom{R} \st R \in \mathscr{A}}
+    \dom{\bigcup \mathscr{A}}
+    &= \Set{x \st \exists y\, \ang{x, y} \in \bigcup \mathscr{A}}\\
+    &= \Set*{x \st \exists y\, \exists R \in \mathscr{A}\ \ang{x,y} \in R}\\
+    &= \Set*{x \st (\exists R \in \mathscr{A})\ x \in \dom{R}}\\
+    &= \bigcup \Set*{\dom{R} \st R \in \mathscr{A}}
   \end{align*}
   A similar argument holds for $\ran \bigcup \mathscr{A}$.
 \end{proof}
 
 \begin{remark}[9]
-  If union were replaced with intersection in the previous question we could not interchange the $\exists$ and $\forall$.
+  If union were replaced with intersection in the previous question we could
+  not interchange the $\exists$ and $\forall$.
 \end{remark}
 
 \subsubsection{n-ary Relations}
@@ -773,15 +876,19 @@ This can be rewritten as
 \begin{exthm}[12]
   Suppose $f$ and $g$ are functions. Then
   \[
-    f \subseteq g \iff \dom{f} \subseteq g \text{ and  } (\forall x \in \dom{f}) f(x) = g(x).
+    f \subseteq g \iff \dom{f} \subseteq g \text{ and  } (\forall x \in
+    \dom{f}) f(x) = g(x).
   \]
 \end{exthm}
 \begin{proof}
-  Suppose $f \subseteq g$ and let $x \in \dom{f}$. Then there exists $y$ such that $\ang{x, y} \in f \subseteq g$, so $x \in \dom{g}$. Since $xfy$ and $xgy$, we have $f(x) = g(x)$. And so on.
+  Suppose $f \subseteq g$ and let $x \in \dom{f}$. Then there exists $y$ such
+  that $\ang{x, y} \in f \subseteq g$, so $x \in \dom{g}$. Since $xfy$ and
+  $xgy$, we have $f(x) = g(x)$. And so on.
 \end{proof}
 
 \begin{exthm}[13]
-  If $f$ and $g$ are functions with $f \subseteq g$ and $dom g \subseteq \dom{f}$, then $f = g$.
+  If $f$ and $g$ are functions with $f \subseteq g$ and $dom g \subseteq
+  \dom{f}$, then $f = g$.
 \end{exthm}
 \begin{proof}
   This follows from the previous exercise.
@@ -791,23 +898,35 @@ This can be rewritten as
   Let $f$ and $g$ be functions. Then $f \cap g$ is a function.
 \end{exthm}
 \begin{proof}
-  Let $x(f\cap g)y$ and $x(f \cap g)y'$. Then since $f$ and $g$ are functions, it follows $y = y'$.
+  Let $x(f\cap g)y$ and $x(f \cap g)y'$. Then since $f$ and $g$ are functions,
+  it follows $y = y'$.
 \end{proof}
 
 \begin{exthm}[14b]
-  If $f$ and $g$ are functions, then $f \cup g$ is a function iff $f(x) = g(x)$ for every $x$ in $\dom{f} \cap \dom{g}$.
+  If $f$ and $g$ are functions, then $f \cup g$ is a function iff $f(x) = g(x)$
+  for every $x$ in $\dom{f} \cap \dom{g}$.
 \end{exthm}
 \begin{proof}
-  Let $x \in \dom{f} \cup \dom{g}$ such that $f(x) \neq g(x)$. Then $\ang{x, f(x)} \in f$ and $\ang{x, g(x)} \in g$. So $\ang{x, f(x)} \in f \cup g$, and $\ang{x, g(x)} \in f \cup g$, but $f(x) \neq g(x)$, so $f \cup g$ is not a function.
+  Let $x \in \dom{f} \cup \dom{g}$ such that $f(x) \neq g(x)$. Then $\ang{x,
+  f(x)} \in f$ and $\ang{x, g(x)} \in g$. So $\ang{x, f(x)} \in f \cup g$, and
+  $\ang{x, g(x)} \in f \cup g$, but $f(x) \neq g(x)$, so $f \cup g$ is not a
+  function.
 
-  Similar logic shows that if $f(x) = g(x)$ in the shared domain, then $f \cup g$ is function.
+  Similar logic shows that if $f(x) = g(x)$ in the shared domain, then $f \cup
+  g$ is function.
 \end{proof}
 
 \begin{exthm}[15]
-  Let $\mathscr{A}$ be a set of functions such that for any $f$ and $g$ in $\mathscr{A}$, either $f \subseteq g$ or $g \subseteq f$. Then $\bigcup \mathscr{A}$ is a function.
+  Let $\mathscr{A}$ be a set of functions such that for any $f$ and $g$ in
+  $\mathscr{A}$, either $f \subseteq g$ or $g \subseteq f$. Then $\bigcup
+  \mathscr{A}$ is a function.
 \end{exthm}
 \begin{proof}
-  Suppose $x \bigcup \mathscr{A} y$ and $x \bigcup \mathscr{A} y'$, then $\ang{x,y} \in f$, for some $f \in \mathscr{A}$, and $\ang{x, y'} \in g$, for some $g \in \mathscr{A}$. Without loss of generality, suppose $f \subseteq g$, then $\ang{x, y} \in g$. Since $g$ is a function, it follows $y = y'$. Hence, $\bigcup \mathscr{A}$ is a function.
+  Suppose $x \bigcup \mathscr{A} y$ and $x \bigcup \mathscr{A} y'$, then
+  $\ang{x,y} \in f$, for some $f \in \mathscr{A}$, and $\ang{x, y'} \in g$, for
+  some $g \in \mathscr{A}$. Without loss of generality, suppose $f \subseteq
+  g$, then $\ang{x, y} \in g$. Since $g$ is a function, it follows $y = y'$.
+  Hence, $\bigcup \mathscr{A}$ is a function.
 \end{proof}
 
 \begin{exthm}[22(b)]
@@ -815,15 +934,17 @@ This can be rewritten as
 \end{exthm}
 \begin{proof}
   \begin{align*}
-    y \in (F \circ G)[A] &\iff \exists x \in A\, x (F \circ G)y\\
-                         &\iff \exists x \in A\, \exists t (xGt \land tFy)\\
-                         &\iff \exists t \in G[A]\ tFy\\
-                         &\iff y \in F[G[A]].
+    y \in (F \circ G)[A]
+    &\iff \exists x \in A\, x (F \circ G)y\\
+    &\iff \exists x \in A\, \exists t (xGt \land tFy)\\
+    &\iff \exists t \in G[A]\ tFy\\
+    &\iff y \in F[G[A]].
   \end{align*}
 \end{proof}
 
 \begin{exthm}[23]
-  Let $I_A$ be the identity function on the set $A$. For any sets $B$ and $C$, $B \circ I_A = B \restriction A$ and $I_A[C] = A \cap C$.
+  Let $I_A$ be the identity function on the set $A$. For any sets $B$ and $C$,
+  $B \circ I_A = B \restriction A$ and $I_A[C] = A \cap C$.
 \end{exthm}
 \begin{proof}
   For the first,
@@ -900,14 +1021,21 @@ For the second,
 \end{proof}
 
 \begin{exthm}[28]
-  If $f$ is a one-to-one function from $A$ into $B$, and that $G$ is the function with $\dom{G} = \powerset{A}$ defined by $G(X) = f[X]$, then $G$ maps $\powerset{A}$ one-to-one into $\powerset{B}$.
+  If $f$ is a one-to-one function from $A$ into $B$, and that $G$ is the
+  function with $\dom{G} = \powerset{A}$ defined by $G(X) = f[X]$, then $G$
+  maps $\powerset{A}$ one-to-one into $\powerset{B}$.
 \end{exthm}
 \begin{proof}
-  Let $X$ and $Y$ be arbitrary elements of $\powerset{A}$ and that $G(X) = G(Y)$. Suppose $x \in X$. Then $f(x) \in f[X] = G(X) = G(Y) = f[Y]$. So $x \in Y$. Therefore, $X \subseteq Y$. Similar reasoning shows that $Y \subseteq X$. And so, $X = Y$.
+  Let $X$ and $Y$ be arbitrary elements of $\powerset{A}$ and that $G(X) =
+  G(Y)$. Suppose $x \in X$. Then $f(x) \in f[X] = G(X) = G(Y) = f[Y]$. So $x
+  \in Y$. Therefore, $X \subseteq Y$. Similar reasoning shows that $Y \subseteq
+  X$. And so, $X = Y$.
 \end{proof}
 
 \begin{exthm}[29]
-  Assume that $f: A \rightarrow B$ and define $G: B \rightarrow \powerset{A}$ by $G(b) = \Set*{x \in A \st f(x) = b}$. Then if $f$ maps $A$ onto $B$, then $G$ is one-to-one.
+  Assume that $f: A \rightarrow B$ and define $G: B \rightarrow \powerset{A}$
+  by $G(b) = \Set*{x \in A \st f(x) = b}$. Then if $f$ maps $A$ onto $B$, then
+  $G$ is one-to-one.
 \end{exthm}
 \begin{proof}
   TODO
@@ -918,8 +1046,12 @@ For the second,
 \begin{exthm}[31]
   The following are equivalent:
   \begin{itemize}
-    \item For any relation $R$ there is a function $H \subseteq R$ with $\dom{H} = \dom{R}$.
-    \item For any set $I$ and any function $H$ with domain $I$, if $H(i) \neq \varnothing$ for all $i$ in $I$, then $\bigtimes_{i \in I} H(i) \neq \varnothing$.
+    \item For any relation $R$ there is a function $H \subseteq R$ with
+      $\dom{H} = \dom{R}$.
+
+    \item For any set $I$ and any function $H$ with domain $I$, if $H(i) \neq
+      \varnothing$ for all $i$ in $I$, then $\bigtimes_{i \in I} H(i) \neq
+      \varnothing$.
 \end{itemize}
 \end{exthm}
 \begin{proof}
@@ -932,14 +1064,18 @@ For the second,
 \subsubsection{Equivalence Relations}
 
 \begin{exthm}[34a]
-  Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive relation. Then $\bigcap \mathscr{A}$ is a transitive relation.
+  Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive
+  relation. Then $\bigcap \mathscr{A}$ is a transitive relation.
 \end{exthm}
 \begin{proof}
-  Let $\ang{x,y}, \ang{y,z} \in \bigcap \mathscr{A}$. There for all $R \in \mathscr{A}$, $\ang{x,y} \in R$, and $\ang{y,z} \in R$. Since $R$ is transitive, $\ang{x, z} \in R$.
+  Let $\ang{x,y}, \ang{y,z} \in \bigcap \mathscr{A}$. There for all $R \in
+  \mathscr{A}$, $\ang{x,y} \in R$, and $\ang{y,z} \in R$. Since $R$ is
+  transitive, $\ang{x, z} \in R$.
 \end{proof}
 
 \begin{exthm}[34a]
-  Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive relation. Then $\bigcup \mathscr{A}$ is not a transitive relation.
+  Suppose $\mathscr{A}$ is a nonempty set, every member is a transitive
+  relation. Then $\bigcup \mathscr{A}$ is not a transitive relation.
 \end{exthm}
 \begin{proof}
   Let $\mathscr{A} = \{\{1, 2\}, \{2, 3\}\}$.
@@ -963,57 +1099,71 @@ For the second,
   If $a$ is a transitive set, then $a^+$ is a transitive set.
 \end{exthm}
 \begin{proof}
-  We will show that $\bigcup (a^+) \subseteq a^+$, showing $a^+$ is a transitive set. Since $\bigcup (a^+) = a \subseteq a^+$.
+  We will show that $\bigcup (a^+) \subseteq a^+$, showing $a^+$ is a
+  transitive set. Since $\bigcup (a^+) = a \subseteq a^+$.
 \end{proof}
 
 \begin{exthm}[3a]
   If $a$ is a transitive set, then $\powerset a$ is a transitive set.
 \end{exthm}
 \begin{proof}
-  Firstly, $\bigcup \powerset(a) = a$. Then since $a$ is transitive, $a \subseteq \powerset(a)$, so $\bigcup \powerset(a) \subseteq \powerset(a)$.
+  Firstly, $\bigcup \powerset(a) = a$. Then since $a$ is transitive, $a
+  \subseteq \powerset(a)$, so $\bigcup \powerset(a) \subseteq \powerset(a)$.
 \end{proof}
 
 \begin{exthm}[3b]
   If $\powerset a$ is a transitive set, then $a$ is a transitive set.
 \end{exthm}
 \begin{proof}
-  Let $x \in a$. Then for some $y \in \powerset a$, $x \in y \in \powerset a$. Since $\powerset a$ is a transitive set, $x \in \powerset a$, or $x \subseteq a$. Hence, $a$ is a transitive set.
+  Let $x \in a$. Then for some $y \in \powerset a$, $x \in y \in \powerset a$.
+  Since $\powerset a$ is a transitive set, $x \in \powerset a$, or $x \subseteq
+  a$. Hence, $a$ is a transitive set.
 \end{proof}
 
 \begin{exthm}
   If $a$ is a transitive set, then $\bigcup a$ is also a transitive set.
 \end{exthm}
 \begin{proof}
-  Let $x \in y \in \bigcup a$. Then there is a $Y \in a$ such that $y \in Y \in a$. Since $a$ is a transitive set, $y \in a$. So $x \in y \in a$. Therefore $x \in \bigcup a$.
+  Let $x \in y \in \bigcup a$. Then there is a $Y \in a$ such that $y \in Y \in
+  a$. Since $a$ is a transitive set, $y \in a$. So $x \in y \in a$. Therefore
+  $x \in \bigcup a$.
 \end{proof}
 
 \begin{exthm}[5a]
-  If every member of $\mathscr{A}$ is a transitive set, then $\bigcup \mathscr{A}$ is a transitive set.
+  If every member of $\mathscr{A}$ is a transitive set, then $\bigcup
+  \mathscr{A}$ is a transitive set.
 \end{exthm}
 \begin{proof}
-  Let $a \in \bigcup \mathscr{A}$. Then there is an $A \in \mathscr{A}$ such that $a \in A$. Since $A$ is transitive, $a \subseteq A$, and so $a \subseteq \bigcup \mathscr{A}$.
+  Let $a \in \bigcup \mathscr{A}$. Then there is an $A \in \mathscr{A}$ such
+  that $a \in A$. Since $A$ is transitive, $a \subseteq A$, and so $a \subseteq
+  \bigcup \mathscr{A}$.
 \end{proof}
 
 \begin{exthm}[6]
   If $\bigcup(a^+) = a$, then $a$ is a transitive set.
 \end{exthm}
 \begin{proof}
-  Suppose $a$ is a transitive set. Let $x \in y \in \bigcup(a^+)$. Then there is a $Y \in a^+$, such that $x \in Y$.
+  Suppose $a$ is a transitive set. Let $x \in y \in \bigcup(a^+)$. Then there
+  is a $Y \in a^+$, such that $x \in Y$.
 
-  So $x \in Y \in a^+ = a \cup \{a\}$. If $x \in Y \in a$, then since $a$ is a transitive set, $x \in a$.
+  So $x \in Y \in a^+ = a \cup \{a\}$. If $x \in Y \in a$, then since $a$ is a
+  transitive set, $x \in a$.
 
   If $x \in Y \in \{a\}$, then $x \in Y = a$. Hence $x \in a$.
 \end{proof}
 
 \begin{exthm}[7]
-  Let $A$ be a set, $a \in A$, and $F: A \mapsto A$. Then there exists a unique function $h: \omega \mapsto A$ such that
+  Let $A$ be a set, $a \in A$, and $F: A \mapsto A$. Then there exists a unique
+  function $h: \omega \mapsto A$ such that
 \begin{align}
   h(0) &= a,\\
   h(n^+) &= F(h(n)), \ \text{for every $n$ in $\omega$.}
   \end{align}
 \end{exthm}
 \begin{proof}
-  This is a proof of the uniqueness. Let $h_1$ and $h_2$ both satisfy the conclusion of the theorem. Let $S = \Set*{n \in \omega \st h_1(n) = h_2(n)}$. We will show $S$ is inductive.
+  This is a proof of the uniqueness. Let $h_1$ and $h_2$ both satisfy the
+  conclusion of the theorem. Let $S = \Set*{n \in \omega \st h_1(n) = h_2(n)}$.
+  We will show $S$ is inductive.
 
   $0 \in S$, as both $h_1$ and $h_2$ are acceptable, so $h_1(0) = a = h_2(0)$.
 
@@ -1027,7 +1177,8 @@ For the second,
 \end{proof}
 
 \begin{exthm}[8]
-  Let $f$ be a one-to-one function from $A$ into $A$, and assume that $c \in A - \ran{f}$. Define $h: \omega \mapsto A$ by recursion:
+  Let $f$ be a one-to-one function from $A$ into $A$, and assume that $c \in A
+  - \ran{f}$. Define $h: \omega \mapsto A$ by recursion:
   \begin{align*}
     h(0) &= c\\
     h(n^+) &= f(h(n)).
@@ -1037,7 +1188,8 @@ For the second,
 \begin{proof}
   Let $T = \Set*{n \in \omega \st h(m) = h(n) \implies m = n}$.
 
-  First we will show that $0 \in T$. Let $m \in \omega$, and $m \neq 0$, then $m = p^+$, for some $p \in \omega$. Then
+  First we will show that $0 \in T$. Let $m \in \omega$, and $m \neq 0$, then
+  $m = p^+$, for some $p \in \omega$. Then
 \begin{align*}
   h(p^+) &= f(h(p))\\
          &\in \ran{f}.
@@ -1048,7 +1200,8 @@ The proof that $k \in T$ implies $k^+ \in T$ is similar to Theorem 4H.
 \end{proof}
 
 \begin{exthm}[9]
-  Let $f$ be a function from $B$ into $B$, and assume $A \subseteq B$. Define $C^*$ to be the intersection of the closed supersets of $A$,
+  Let $f$ be a function from $B$ into $B$, and assume $A \subseteq B$. Define
+  $C^*$ to be the intersection of the closed supersets of $A$,
   \begin{equation*}
     C^* = \bigcap \Set*{X \st A \subseteq X \subseteq B \ \&\ f[X] \subseteq X}.
   \end{equation*}
@@ -1091,18 +1244,23 @@ The proof that $k \in T$ implies $k^+ \in T$ is similar to Theorem 4H.
   Let $m$ and $n$ be natural numbers such that $m \cdot n = 0$. Then either $m = 0$ or $n = 0$.
 \end{exthm}
 \begin{proof}
-  Let $m$ be fixed and let $S = \Set*{n \in \omega \st m \cdot n \Rightarrow m = 0 \text{ or } n = 0} = \Set*{p \in \omega \st m \cdot p^+ = 0 \Rightarrow m = 0}$.
+  Let $m$ be fixed and let $S = \Set*{n \in \omega \st m \cdot n \Rightarrow m
+  = 0 \text{ or } n = 0} = \Set*{p \in \omega \st m \cdot p^+ = 0 \Rightarrow m
+= 0}$.
 
-  $0 \in S$, as $m \cdot 0^+ = 0$ implies $m = 0$..
+  $0 \in S$, as $m \cdot 0^+ = 0$ implies $m = 0$.
 
-  Suppose $k \in S$. We want to show that if $m \neq 0$ then $m \cdot k^{++} \neq 0$. To this end, suppose $m \neq 0$. Then $m \cdot k^{++} = m \cdot k^+ +m \neq 0$. Thus $k^+ \in S$. Therefore $S$ is inductive.
+  Suppose $k \in S$. We want to show that if $m \neq 0$ then $m \cdot k^{++}
+  \neq 0$. To this end, suppose $m \neq 0$. Then $m \cdot k^{++} = m \cdot k^+
+  +m \neq 0$. Thus $k^+ \in S$. Therefore $S$ is inductive.
 \end{proof}
 
 \begin{exthm}[15]
   Addition is associative, $(m + n) + p = m + (n + p)$.
 \end{exthm}
 \begin{proof}
-  Let $A = \Set*{p \in \omega \st (m + n) + p = m + (n + p)}$. We will show $A$ is inductive.
+  Let $A = \Set*{p \in \omega \st (m + n) + p = m + (n + p)}$. We will show $A$
+  is inductive.
 
   Since $(m + n) + 0 = m + n = 0 + (m + n)$, $0 \in A$.
 
