@@ -1069,9 +1069,18 @@ The proof that $k \in T$ implies $k^+ \in T$ is similar to Theorem 4H.
   \begin{itemize}
     \item ($C^* \subseteq C_*$)
 
-      We will first show that $f[C_*] \subseteq C_*$. Let $y \in f[C_*]$. Then there is an $x \in C_*$ such that $f(x) = y$. By $x \in C_*$, this means there is an $n \in \omega$ such that $x \in h(n)$. So $y = f(h(n))$ for some $n \in \omega$. So then $y \in h(n^+)$. Hence, $y \in C_*$.
+      We will first show that $f[C_*] \subseteq C_*$. Let $y \in
+      f[C_*]$. Then there is an $x \in C_*$ such that $f(x) = y$.
+      By $x \in C_*$, this means there is an $n \in \omega$ such that
+      $x \in h(n)$. So $y \in f[h(n)]$ for some $n \in \omega$.
+      Then $y \in h(n^+)$. Hence, $y \in C_*$.
 
-      Let $C = \Set*{X \st A \subseteq X \subseteq B \ \&\ f[X] \subseteq X}$. Since $A \subseteq C_* \subseteq B$, and above we showed that $f[C_*] \subseteq C_*$, we have $C_* \in C$. We then have to show that for every set $D \in C$, that $C_* \subseteq D$. TODO
+      Let $D = \Set*{X \st A \subseteq X \subseteq B \ \&\ f[X] \subseteq X}$.
+      Since $A \subseteq C_* \subseteq B$, and above we showed that $f[C_*]
+      \subseteq C_*$, we have $C_* \in D$.
+      Since $C^*$ is the largest set which is contained in each
+      member of the collection $D$. Since $C_* \in D$, we have
+      $C^* \subseteq C_*$.
 
     \item ($C_* \subseteq C^*$) TODO
   \end{itemize}
