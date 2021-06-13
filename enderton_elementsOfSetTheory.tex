@@ -363,9 +363,9 @@ things belong to $A$ as to $B$. By the Extensionality Axiom, $A = B$.  }
   \varnothing$.
 }
 
-\thmproof{}{Whenever $A \subseteq B$, then $\cap B \subseteq \cap A$.}
-{Suppose $B$ is non-empty. Let $x \in \cap B$. Then for all $b \in B$, $x \in b$ TODO
-}
+\thmproof{}{Whenever $\varnothing \neq A \subseteq B$, then $\cap B \subseteq \cap A$.}
+{Suppose $B$ is non-empty. Let $x \in \cap B$. Then for all $b \in B$, $x \in
+b$. Since $A \subseteq B$, then for every $a \in A$, $x \in A$.}
 
 \thmproof{}{$\powerset \varnothing = \{\varnothing\}$}
 {The power set of $\varnothing$ is the set of all subsets of $\varnothing$.
@@ -769,7 +769,15 @@ things belong to $A$ as to $B$. By the Extensionality Axiom, $A = B$.  }
   $A \cup \bigcup \mathscr{B} = \bigcup\Set*{A \cup X \st X \in \mathscr{B}}$.
 \end{exthm}
 \begin{proof}
-  TODO
+  \begin{align*}
+    x \in A \cup \bigcup \mathscr{B}
+    &\iff x \in A \text{ or } x \in \bigcup \mathscr{B}\\
+    &\iff x \in A \text{ or } \exists X \in \mathscr{B}, x \in X\\
+    &\iff x \in A \text{ or } \exists X \in \mathscr{B}, x \in X\\
+    &\iff \exists X \in \mathscr{B}\ (x \in A \text{ or } x \in X)\\
+    &\iff \exists X \in \mathscr{B}\ (x \in A \cup X)\\
+    &\iff x \in \bigcup\Set*{A \cup X \st X \in \mathscr{B}}.
+  \end{align*}
 \end{proof}
 
 \subsubsection{Review Exercises}
